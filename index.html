@@ -965,7 +965,7 @@ footer {
       <button type="submit"><span class="btn-text">Early Access</span></button>
     </form>
     <div class="form-msg" id="heroMsg"></div>
-    <p class="waitlist-count">Join <strong>247</strong> traders on the waitlist</p>
+    <p class="waitlist-count">Join <strong id="waitlistCount">247</strong> traders on the waitlist</p>
   </div>
 
   <div class="scroll-hint">
@@ -1321,6 +1321,17 @@ async function handleSubmit(e, form) {
   }
   return false;
 }
+
+/* ─── Live waitlist counter ─── */
+(async function() {
+  try {
+    var res = await fetch('https://api.tviewalarm.com/waitlist/count');
+    var data = await res.json();
+    if (data.count > 0) {
+      document.getElementById('waitlistCount').textContent = data.count;
+    }
+  } catch (e) {}
+})();
 </script>
 
 </body>
