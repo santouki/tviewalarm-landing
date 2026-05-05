@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Never Miss a Crypto Alert Again — Even While Asleep</title>
+<meta name="description" content="The complete system for crypto traders who can't afford to miss alerts at night. Loud alarms that bypass silent mode, triggered directly by TradingView.">
+<link rel="canonical" href="https://tviewalarm.com/pages/never-miss-crypto-alert-while-asleep">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tviewalarm.com/pages/never-miss-crypto-alert-while-asleep">
+<meta property="og:title" content="How to Never Miss a Crypto Alert Again — Even While Asleep">
+<meta property="og:description" content="The complete system to never miss a TradingView alert again — loud alarms that wake you up even on silent mode.">
+<meta property="og:site_name" content="TviewAlarm">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Never Miss a Crypto Alert Again — Even While Asleep",
+  "description": "Complete guide to never missing a TradingView crypto alert using webhook-based alarm delivery.",
+  "author": { "@type": "Organization", "name": "TviewAlarm" },
+  "publisher": { "@type": "Organization", "name": "TviewAlarm", "url": "https://tviewalarm.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I make sure I never miss a crypto alert?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use a webhook-based alarm app like TviewAlarm connected to TradingView. Unlike push notifications, which can be silenced, TviewAlarm triggers alarm-priority audio that bypasses Do Not Disturb and silent mode — ensuring you wake up for every alert you set, no matter when it fires." }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I monitor crypto while sleeping?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Set up precise alerts in TradingView for the levels and conditions you care about, then connect them to TviewAlarm via webhook. Your phone sleeps silently until your exact conditions are met — then it rings loudly to wake you. You don't need to monitor charts; you monitor outcomes." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TviewAlarm work for all cryptocurrencies?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. TviewAlarm works with any TradingView alert — which covers all major cryptocurrencies, forex pairs, stocks, indices, and commodities available on TradingView. You can also set volatility alerts and custom Pine Script strategy signals." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --accent: #C9A96E; --accent-15: rgba(201,169,110,0.15); --accent-06: rgba(201,169,110,0.06); --transition: 0.4s cubic-bezier(0.4,0,0.2,1); }
+[data-theme="dark"] { --bg: #000000; --surface: #0C0C0C; --border: #1C1C1C; --hover: #161616; --text: #F0F0F0; --text-secondary: #7A7A7A; --text-muted: #3A3A3A; --accent-bg: #1A160D; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+::selection { background: var(--accent); color: #000; }
+a { color: var(--accent); text-decoration: none; transition: opacity var(--transition); }
+a:hover { opacity: 0.75; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; border-bottom: 1px solid transparent; transition: all var(--transition); }
+nav.scrolled { background: rgba(0,0,0,0.92); border-bottom-color: var(--border); backdrop-filter: blur(12px); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 1px; color: var(--text); }
+.nav-logo span { color: var(--accent); }
+.nav-cta { padding: 10px 24px; background: var(--accent); color: #000; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; transition: opacity var(--transition); }
+.nav-cta:hover { opacity: 0.85; color: #000; }
+.container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+.breadcrumb { padding: 120px 0 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+.breadcrumb span { color: var(--text-secondary); }
+.article-hero { padding: 32px 0 60px; }
+.article-label { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.article-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 58px); font-weight: 300; line-height: 1.15; color: var(--text); margin-bottom: 24px; }
+.article-hero h1 em { color: var(--accent); font-style: normal; }
+.article-intro { font-size: 18px; color: var(--text-secondary); max-width: 600px; line-height: 1.8; }
+.quick-answer { background: var(--accent-bg); border-left: 3px solid var(--accent); padding: 28px 32px; margin: 48px 0; }
+.quick-answer .qa-label { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.quick-answer p { font-size: 15px; line-height: 1.8; color: var(--text-secondary); }
+.gold-line { width: 32px; height: 1px; background: var(--accent); opacity: 0.5; margin: 56px 0; }
+.section { margin-bottom: 64px; }
+.section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 300; line-height: 1.2; margin-bottom: 20px; color: var(--text); }
+.section h2 em { color: var(--accent); font-style: normal; }
+.section p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+.section p strong { color: var(--text); }
+.pain-list { list-style: none; margin: 24px 0; }
+.pain-list li { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--text-secondary); }
+.pain-list li:last-child { border-bottom: none; }
+.pain-list li .icon { color: #C4392A; font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+.pain-list li .icon.ok { color: var(--accent); }
+.pain-list li strong { color: var(--text); }
+.flow-diagram { display: flex; align-items: center; gap: 0; margin: 32px 0; overflow-x: auto; }
+.flow-node { flex: 1; min-width: 120px; background: var(--surface); border: 1px solid var(--border); padding: 20px 16px; text-align: center; }
+.flow-node.highlight { background: var(--accent-bg); border-color: rgba(201,169,110,0.3); }
+.flow-node .f-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+.flow-node .f-title { font-size: 13px; font-weight: 600; color: var(--text); }
+.flow-node.highlight .f-title { color: var(--accent); }
+.flow-arrow { color: var(--accent); font-size: 18px; padding: 0 4px; flex-shrink: 0; }
+.steps { margin: 32px 0; }
+.step { display: flex; gap: 24px; margin-bottom: 32px; align-items: flex-start; }
+.step-num { width: 40px; height: 40px; flex-shrink: 0; border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--accent); }
+.step-content h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.step-content p { font-size: 15px; color: var(--text-secondary); margin: 0; }
+.use-cases { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin: 32px 0; }
+.use-case { background: var(--surface); padding: 24px 20px; }
+.use-case h3 { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+.use-case p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); margin: 40px 0; }
+.testimonial { background: var(--surface); padding: 28px 24px; }
+.testimonial-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+.testimonial-text em { color: var(--text); font-style: normal; }
+.testimonial-author { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+.stars { color: var(--accent); font-size: 12px; margin-bottom: 10px; }
+.cta-block { background: var(--surface); border: 1px solid var(--border); padding: 56px 40px; text-align: center; margin: 64px 0; }
+.cta-block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 300; color: var(--text); margin-bottom: 16px; }
+.cta-block h2 em { color: var(--accent); font-style: normal; }
+.cta-block p { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; padding: 16px 40px; background: var(--accent); color: #000; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; border: none; cursor: pointer; transition: opacity var(--transition); }
+.cta-btn:hover { opacity: 0.85; color: #000; }
+.cta-sub { display: block; margin-top: 16px; font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+.faq { margin: 48px 0; }
+.faq h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 4vw, 36px); font-weight: 300; margin-bottom: 32px; color: var(--text); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; text-align: left; background: none; border: none; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); transition: color var(--transition); }
+.faq-q:hover { color: var(--accent); }
+.faq-q .faq-icon { color: var(--accent); font-size: 20px; transition: transform var(--transition); flex-shrink: 0; margin-left: 16px; }
+.faq-q.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 0 20px; font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+.faq-a.open { display: block; }
+.related { margin: 64px 0; }
+.related h3 { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); }
+.related-card { background: var(--surface); padding: 24px 20px; transition: background var(--transition); }
+.related-card:hover { background: var(--hover); }
+.related-card a { color: var(--text); font-size: 14px; line-height: 1.5; font-weight: 500; }
+.related-card a:hover { color: var(--accent); opacity: 1; }
+.related-card .arrow { color: var(--accent); font-size: 12px; display: block; margin-top: 8px; }
+footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 12px; letter-spacing: 1px; }
+footer a { color: var(--text-muted); }
+footer a:hover { color: var(--accent); opacity: 1; }
+@media (max-width: 640px) { nav { padding: 16px 20px; } .container { padding: 0 20px; } .article-hero h1 { font-size: 32px; } .use-cases { grid-template-columns: 1fr; } .flow-diagram { flex-direction: column; } .flow-arrow { transform: rotate(90deg); } }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="https://tviewalarm.com" class="nav-logo">Tview<span>Alarm</span></a>
+  <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="nav-cta">Download Free</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="https://tviewalarm.com">TviewAlarm</a> <span>/ Never Miss a Crypto Alert</span></p>
+
+    <div class="article-hero">
+      <p class="article-label">Core Guide · Complete System</p>
+      <h1>How to <em>Never Miss</em> a Crypto Alert Again — Even While Asleep</h1>
+      <p class="article-intro">Missing one trade hurts. Knowing your alert system is unreliable is worse. Here's the complete setup that ensures you wake up for every alert you've set — and sleep through everything else.</p>
+    </div>
+
+    <div class="quick-answer">
+      <p class="qa-label">Quick Answer</p>
+      <p>To never miss a crypto alert, replace push notification delivery with webhook-based alarm delivery. Set up TradingView alerts with your TviewAlarm webhook URL. When any alert fires, TviewAlarm triggers alarm-priority audio on your Android phone — bypassing silent mode and Do Not Disturb — regardless of the time or your phone settings.</p>
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="section">
+      <h2>The Problem Isn't Your Alerts. <em>It's How They're Delivered.</em></h2>
+      <p>Most traders assume that setting an alert = being alerted. It doesn't. Setting an alert means TradingView will attempt to notify you via push notification when the condition is met. Whether that notification actually reaches you — whether it makes a sound, wakes you up, and gets your attention — depends entirely on your phone's notification settings at that moment.</p>
+      <p>And if you're sleeping, those settings are almost certainly working against you:</p>
+      <ul class="pain-list">
+        <li><span class="icon">✕</span><div><strong>Do Not Disturb</strong> — silences all push notifications while you sleep</div></li>
+        <li><span class="icon">✕</span><div><strong>Silent mode</strong> — removes sound from notification channel</div></li>
+        <li><span class="icon">✕</span><div><strong>Battery optimization</strong> — Android delays background push delivery to extend battery life</div></li>
+        <li><span class="icon">✕</span><div><strong>App restrictions</strong> — some Android manufacturers aggressively kill background apps, including TradingView</div></li>
+      </ul>
+      <p>The result: your alert fires, TradingView tries to deliver it, and nothing happens on your end. <strong>Your setup was correct. The delivery layer failed.</strong></p>
+    </div>
+
+    <div class="section">
+      <h2>How the <em>TviewAlarm System</em> Works</h2>
+      <p>TviewAlarm replaces push notifications with a completely different delivery architecture: <strong>webhooks → alarm-priority audio.</strong></p>
+
+      <div class="flow-diagram">
+        <div class="flow-node">
+          <div class="f-label">Step 1</div>
+          <div class="f-title">Alert condition met on TradingView</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">
+          <div class="f-label">Step 2</div>
+          <div class="f-title">Webhook sent to TviewAlarm</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">
+          <div class="f-label">Step 3</div>
+          <div class="f-title">High-priority FCM wakes device</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <div class="f-label">Step 4</div>
+          <div class="f-title">Alarm fires at full volume</div>
+        </div>
+      </div>
+
+      <p>The critical difference: step 3 uses Firebase Cloud Messaging with maximum delivery priority, and step 4 uses the alarm audio channel — both of which bypass the restrictions that kill standard push notifications.</p>
+    </div>
+
+    <div class="section">
+      <h2>Works for Every <em>Crypto Use Case</em></h2>
+      <div class="use-cases">
+        <div class="use-case">
+          <h3>Price Breakouts</h3>
+          <p>Set a TradingView price alert for any level. Wake up the moment it breaks — BTC, ETH, any altcoin.</p>
+        </div>
+        <div class="use-case">
+          <h3>Strategy Signals</h3>
+          <p>Connect Pine Script strategy signals via webhook. Your TviewAlarm rings when your strategy says to act.</p>
+        </div>
+        <div class="use-case">
+          <h3>Volatility Spikes</h3>
+          <p>Get woken up when a market makes an abnormal move — TviewAlarm's built-in volatility tracker monitors 659+ pairs.</p>
+        </div>
+        <div class="use-case">
+          <h3>Multi-Market</h3>
+          <p>Crypto, forex, stocks, indices — different webhooks, different tones. Know what moved before you open your eyes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>The Complete Setup — <em>Under 60 Seconds</em></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Download TviewAlarm (free, Android)</h3>
+            <p>Install from Google Play. Sign in and note your personal webhook URL on the Home tab.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Add webhook to every TradingView alert</h3>
+            <p>Edit each alert → Notifications → Webhook URL → paste your TviewAlarm URL. One URL works for unlimited alerts.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Set distinct alarm tones per market</h3>
+            <p>Optional but powerful: different tones for different webhooks so you know which market fired before looking.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Enable DND exception (optional)</h3>
+            <p>For maximum reliability on restricted Android devices, add TviewAlarm to your DND allowlist in Android settings.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>Sleep. Your alerts are covered.</h3>
+            <p>Phone on silent, DND on. You'll only wake up when your exact conditions are met — nothing else.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I sleep with my phone on silent across the room. <em>TviewAlarm still woke me up for a 4AM BTC alert.</em> The alarm was so loud my partner woke up too. Worth it."</p>
+        <p class="testimonial-author">Lucas H. — Crypto Trader</p>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I have 12 active TradingView alerts across 4 markets. TviewAlarm handles all of them. <em>Haven't missed a single one since setup.</em>"</p>
+        <p class="testimonial-author">Amanda C. — Multi-Market Trader</p>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The peace of mind is worth everything. <em>I know if something hits my level, I'll wake up.</em> I actually sleep properly for the first time in a year."</p>
+        <p class="testimonial-author">Matt R. — Swing Trader</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="container">
+      <h2><em>Never Miss</em> Another Crypto Alert. Starting Tonight.</h2>
+      <p>Download TviewAlarm and connect your existing TradingView alerts in under 60 seconds. Free to start.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="cta-btn">Download TviewAlarm — Free</a>
+      <span class="cta-sub">Android · All crypto, forex, stocks · No code required</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I make sure I never miss a crypto alert? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Use a webhook-based alarm app like TviewAlarm connected to TradingView. Unlike push notifications, which can be silenced, TviewAlarm triggers alarm-priority audio that bypasses Do Not Disturb and silent mode — ensuring you wake up for every alert you set, no matter when it fires.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How can I monitor crypto while sleeping? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Set up precise alerts in TradingView for the levels and conditions you care about, then connect them to TviewAlarm via webhook. Your phone sleeps silently until your exact conditions are met — then it rings loudly. You don't monitor charts; you monitor outcomes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Does TviewAlarm work for all cryptocurrencies? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. TviewAlarm works with any TradingView alert — which covers all major cryptocurrencies, forex pairs, stocks, indices, and commodities. It also has a built-in volatility tracker for 659+ crypto pairs that monitors price movements independently of TradingView alerts.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I have different alarms for different coins? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. TviewAlarm supports multiple named webhooks, each with its own alarm tone. You can have one tone for BTC alerts, another for ETH, another for your forex alerts. You'll know exactly which market fired before you even look at your phone.</div>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="https://tviewalarm.com/pages/tradingview-alerts-not-waking-me-up">TradingView alerts not waking you up — the fix<span class="arrow">→</span></a>
+        </div>
+        <div class="related-card">
+          <a href="https://tviewalarm.com/pages/wake-up-bitcoin-breakout-alert">How to wake up for a Bitcoin breakout<span class="arrow">→</span></a>
+        </div>
+        <div class="related-card">
+          <a href="https://tviewalarm.com/pages/trade-while-working-automated-alerts">How to trade while working a 9-to-5<span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 TviewAlarm · <a href="https://tviewalarm.com">Home</a> · <a href="https://tviewalarm.com/privacy.html">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>

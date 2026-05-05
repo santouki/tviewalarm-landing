@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradingView Alerts Not Waking Me Up — Here's the Fix</title>
+<meta name="description" content="Your TradingView alerts fire but your phone stays silent. Here's exactly why — and how traders fix it in 60 seconds with a dedicated alarm app.">
+<link rel="canonical" href="https://tviewalarm.com/pages/tradingview-alerts-not-waking-me-up">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tviewalarm.com/pages/tradingview-alerts-not-waking-me-up">
+<meta property="og:title" content="TradingView Alerts Not Waking Me Up — Here's the Fix">
+<meta property="og:description" content="Your TradingView alerts fire but your phone stays silent. Here's exactly why — and how traders fix it in 60 seconds.">
+<meta property="og:site_name" content="TviewAlarm">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "TradingView Alerts Not Waking Me Up — Here's the Fix",
+  "description": "Why TradingView alerts don't wake you up and how to fix it with a dedicated alarm app.",
+  "author": { "@type": "Organization", "name": "TviewAlarm" },
+  "publisher": { "@type": "Organization", "name": "TviewAlarm", "url": "https://tviewalarm.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why don't TradingView alerts wake me up?",
+      "acceptedAnswer": { "@type": "Answer", "text": "TradingView sends standard push notifications, which Android silences during DND mode, battery saver, and low volume states. They are not classified as alarms, so they cannot override system sound settings." }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I make TradingView alerts louder on Android?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Route your TradingView alert through a webhook to a dedicated app like TviewAlarm. It receives the webhook and triggers a full alarm — classified as an alarm-priority audio event — which bypasses silent mode entirely." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TviewAlarm work while my phone is on silent?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. TviewAlarm uses Android's alarm audio channel, which is separate from media and notification volume. It rings at full volume even when your phone is on silent or Do Not Disturb." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I connect TradingView alerts to TviewAlarm?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Download TviewAlarm, copy your personal webhook URL from the app, and paste it into TradingView's alert notification settings under 'Webhook URL'. That's it — no code required." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will TviewAlarm wake me up even if my screen is off?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. TviewAlarm sends a high-priority FCM push that wakes the device, launches the alarm, and rings at full volume — even if the screen is off and the phone is across the room." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --accent: #C9A96E;
+  --accent-15: rgba(201,169,110,0.15);
+  --accent-06: rgba(201,169,110,0.06);
+  --transition: 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+[data-theme="dark"] {
+  --bg: #000000;
+  --surface: #0C0C0C;
+  --border: #1C1C1C;
+  --hover: #161616;
+  --text: #F0F0F0;
+  --text-secondary: #7A7A7A;
+  --text-muted: #3A3A3A;
+  --accent-bg: #1A160D;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+::selection { background: var(--accent); color: #000; }
+a { color: var(--accent); text-decoration: none; transition: opacity var(--transition); }
+a:hover { opacity: 0.75; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition);
+  background: rgba(0,0,0,0.0);
+  backdrop-filter: blur(0px);
+}
+nav.scrolled {
+  background: rgba(0,0,0,0.92);
+  border-bottom-color: var(--border);
+  backdrop-filter: blur(12px);
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 1px; color: var(--text); }
+.nav-logo span { color: var(--accent); }
+.nav-cta {
+  padding: 10px 24px; background: var(--accent); color: #000;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  border: none; cursor: pointer; transition: opacity var(--transition);
+}
+.nav-cta:hover { opacity: 0.85; color: #000; }
+
+/* LAYOUT */
+.container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+.container-wide { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* BREADCRUMB */
+.breadcrumb {
+  padding: 120px 0 0;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted);
+}
+.breadcrumb span { color: var(--text-secondary); }
+
+/* ARTICLE HERO */
+.article-hero { padding: 32px 0 60px; }
+.article-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 20px;
+}
+.article-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 300; line-height: 1.15;
+  color: var(--text); margin-bottom: 24px;
+}
+.article-hero h1 em { color: var(--accent); font-style: normal; }
+.article-intro {
+  font-size: 18px; color: var(--text-secondary); max-width: 600px; line-height: 1.8;
+}
+
+/* QUICK ANSWER */
+.quick-answer {
+  background: var(--accent-bg); border-left: 3px solid var(--accent);
+  padding: 28px 32px; margin: 48px 0;
+}
+.quick-answer .qa-label {
+  font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 12px;
+}
+.quick-answer p { font-size: 15px; line-height: 1.8; color: var(--text-secondary); }
+
+/* DIVIDER */
+.gold-line { width: 32px; height: 1px; background: var(--accent); opacity: 0.5; margin: 56px 0; }
+
+/* SECTIONS */
+.section { margin-bottom: 64px; }
+.section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 4vw, 38px); font-weight: 300;
+  line-height: 1.2; margin-bottom: 20px; color: var(--text);
+}
+.section h2 em { color: var(--accent); font-style: normal; }
+.section p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+.section p strong { color: var(--text); }
+
+/* PAIN BULLETS */
+.pain-list { list-style: none; margin: 24px 0; }
+.pain-list li {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  font-size: 15px; color: var(--text-secondary);
+}
+.pain-list li:last-child { border-bottom: none; }
+.pain-list li .icon { color: #C4392A; font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+.pain-list li strong { color: var(--text); }
+
+/* STEPS */
+.steps { margin: 32px 0; }
+.step {
+  display: flex; gap: 24px; margin-bottom: 32px; align-items: flex-start;
+}
+.step-num {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--accent);
+}
+.step-content h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.step-content p { font-size: 15px; color: var(--text-secondary); margin: 0; }
+.step-content code {
+  display: inline-block; margin-top: 8px; padding: 6px 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+/* TESTIMONIALS */
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px; background: var(--border); margin: 40px 0;
+}
+.testimonial {
+  background: var(--surface); padding: 28px 24px;
+}
+.testimonial-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+.testimonial-text em { color: var(--text); font-style: normal; }
+.testimonial-author { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+.stars { color: var(--accent); font-size: 12px; margin-bottom: 10px; }
+
+/* CTA BLOCK */
+.cta-block {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 56px 40px; text-align: center; margin: 64px 0;
+}
+.cta-block h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 42px); font-weight: 300;
+  color: var(--text); margin-bottom: 16px;
+}
+.cta-block h2 em { color: var(--accent); font-style: normal; }
+.cta-block p { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-btn {
+  display: inline-block; padding: 16px 40px;
+  background: var(--accent); color: #000;
+  font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+  border: none; cursor: pointer; transition: opacity var(--transition);
+}
+.cta-btn:hover { opacity: 0.85; color: #000; }
+.cta-sub { display: block; margin-top: 16px; font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+
+/* FAQ */
+.faq { margin: 48px 0; }
+.faq h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 4vw, 36px); font-weight: 300;
+  margin-bottom: 32px; color: var(--text);
+}
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  width: 100%; text-align: left; background: none; border: none;
+  padding: 20px 0; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
+  color: var(--text); transition: color var(--transition);
+}
+.faq-q:hover { color: var(--accent); }
+.faq-q .faq-icon { color: var(--accent); font-size: 20px; transition: transform var(--transition); flex-shrink: 0; margin-left: 16px; }
+.faq-q.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 0 20px; font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+.faq-a.open { display: block; }
+
+/* RELATED */
+.related { margin: 64px 0; }
+.related h3 {
+  font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 24px;
+}
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); }
+.related-card {
+  background: var(--surface); padding: 24px 20px;
+  transition: background var(--transition);
+}
+.related-card:hover { background: var(--hover); }
+.related-card a { color: var(--text); font-size: 14px; line-height: 1.5; font-weight: 500; }
+.related-card a:hover { color: var(--accent); opacity: 1; }
+.related-card .arrow { color: var(--accent); font-size: 12px; display: block; margin-top: 8px; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border); padding: 40px 0;
+  text-align: center; color: var(--text-muted); font-size: 12px; letter-spacing: 1px;
+}
+footer a { color: var(--text-muted); }
+footer a:hover { color: var(--accent); opacity: 1; }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  nav { padding: 16px 20px; }
+  .container { padding: 0 20px; }
+  .article-hero h1 { font-size: 32px; }
+  .cta-block { padding: 40px 24px; }
+  .quick-answer { padding: 20px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="https://tviewalarm.com" class="nav-logo">Tview<span>Alarm</span></a>
+  <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="nav-cta">Download Free</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="https://tviewalarm.com">TviewAlarm</a> <span>/ TradingView Alerts Not Working</span></p>
+
+    <div class="article-hero">
+      <p class="article-label">Problem & Fix</p>
+      <h1>TradingView Alerts Not <em>Waking Me Up</em> — Here's the Fix</h1>
+      <p class="article-intro">Your alerts are firing. TradingView is doing its job. But your phone stays silent — and you sleep through the trade. Here's exactly why, and how to fix it permanently in under 60 seconds.</p>
+    </div>
+
+    <div class="quick-answer">
+      <p class="qa-label">Quick Answer</p>
+      <p>TradingView alerts don't wake you up because they're sent as standard push notifications — which Android silences during Do Not Disturb, battery saver, and low-volume states. The fix is to route alerts through a webhook to a dedicated alarm app like TviewAlarm, which triggers a true alarm-priority sound that bypasses silent mode entirely.</p>
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="section">
+      <h2>Why Your TradingView Alerts Are <em>Completely Silent</em></h2>
+      <p>You did everything right. You set the alert. You tested it during the day — it buzzed, it beeped, it showed up. You went to bed thinking you were covered.</p>
+      <p>Then at 3:14 AM, Bitcoin broke the level you'd been watching for six weeks. TradingView fired the alert. Your phone received it. And you slept straight through a move that would have paid your rent.</p>
+      <p><strong>This is not a TradingView bug. This is a fundamental Android notification problem.</strong> TradingView sends standard push notifications — the same category as emails and Instagram likes. Android treats them identically, which means:</p>
+      <ul class="pain-list">
+        <li><span class="icon">✕</span><div><strong>Do Not Disturb silences them.</strong> If you have DND on while sleeping (most traders do), TradingView alerts make zero sound.</div></li>
+        <li><span class="icon">✕</span><div><strong>Battery saver blocks them.</strong> Android delays or drops push notifications to save battery at night.</div></li>
+        <li><span class="icon">✕</span><div><strong>Notification volume ≠ alarm volume.</strong> Even at max notification volume, push alerts won't ring as loud as a clock alarm.</div></li>
+        <li><span class="icon">✕</span><div><strong>Screen-off = delivery delay.</strong> Background app restrictions push TradingView notifications to a queue — they arrive late, or not at all.</div></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>What Happens Every Time You Miss an Alert</h2>
+      <p>It's not just the trade you miss in the moment. It's the compounding cost of operating without a safety net:</p>
+      <ul class="pain-list">
+        <li><span class="icon">✕</span><div><strong>Positions move against you overnight.</strong> Without an exit alert, you wake up to a drawdown that didn't have to happen.</div></li>
+        <li><span class="icon">✕</span><div><strong>Entries never taken.</strong> The breakout you planned for weeks executes at 2AM and you catch it three hours late, when the edge is gone.</div></li>
+        <li><span class="icon">✕</span><div><strong>You can't sleep properly anyway.</strong> Because you know the alerts might not work, you lie awake checking your phone every 45 minutes — which defeats the entire point.</div></li>
+        <li><span class="icon">✕</span><div><strong>Alert anxiety compounds.</strong> The longer this goes on, the more you doubt your setup — and start making emotional decisions to compensate.</div></li>
+      </ul>
+      <p>Silent notifications are not a minor inconvenience. For active traders, they're a structural failure in your risk system.</p>
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="section">
+      <h2>The Fix: Route Alerts Through a <em>Dedicated Alarm Layer</em></h2>
+      <p>TradingView has a feature most traders never use: <strong>webhooks</strong>. Instead of (or in addition to) push notifications, TradingView can send an HTTP request to any URL you specify when an alert fires.</p>
+      <p>TviewAlarm gives you a personal webhook URL. When TradingView hits that URL, TviewAlarm triggers an alarm — not a notification. A <strong>true alarm-priority audio event</strong>, using Android's alarm audio channel, which operates completely independently of:</p>
+      <ul class="pain-list">
+        <li><span class="icon">✓</span><div><strong>Do Not Disturb mode</strong> — alarm channel bypasses DND by default</div></li>
+        <li><span class="icon">✓</span><div><strong>Silent mode</strong> — alarm volume is separate from notification and media volume</div></li>
+        <li><span class="icon">✓</span><div><strong>Screen off state</strong> — high-priority FCM wakes the device before the alarm fires</div></li>
+        <li><span class="icon">✓</span><div><strong>Battery optimization</strong> — alarm events are exempt from Android's background restrictions</div></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>How to Set It Up in 4 Steps</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Download TviewAlarm</h3>
+            <p>Free on Android. Open the app and complete the quick setup — takes about 30 seconds.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Copy Your Personal Webhook URL</h3>
+            <p>On the Home tab, your unique webhook URL is displayed. Tap to copy it. It looks like:</p>
+            <code>https://tviewalarm.com/webhook/your-uid</code>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Paste It Into TradingView</h3>
+            <p>In TradingView, create or edit any alert. Under <strong>Notifications</strong>, enable <strong>Webhook URL</strong> and paste your TviewAlarm URL. Save the alert.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Test It</h3>
+            <p>Put your phone on silent, lock the screen, and trigger a test alert. Your phone will ring loudly — even on silent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I had TradingView alerts set up for months thinking they were protecting me at night. TviewAlarm showed me they were completely useless while sleeping. <em>Set it up in 2 minutes, slept properly for the first time in months.</em>"</p>
+        <p class="testimonial-author">Alex M. — Crypto Swing Trader</p>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Missed a 4% ETH move because my phone was on silent. Found TviewAlarm the same day. <em>It rang so loud it woke up my dog.</em> Never missed a night alert since."</p>
+        <p class="testimonial-author">Sarah K. — Algorithmic Trader</p>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The webhook setup took me literally 90 seconds. <em>Now I actually sleep</em> instead of waking up every hour to check charts."</p>
+        <p class="testimonial-author">David R. — Forex Trader</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="container">
+      <h2>Stop <em>Trusting Notifications</em> to Protect Your Trades</h2>
+      <p>Download TviewAlarm and connect your first TradingView alert in under 60 seconds. Free forever for your first webhook.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="cta-btn">Download TviewAlarm — Free</a>
+      <span class="cta-sub">Android · No code required · 60-second setup</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Why don't TradingView alerts wake me up? <span class="faq-icon">+</span></button>
+        <div class="faq-a">TradingView sends standard push notifications, which Android silences during DND mode, battery saver, and low volume states. They are not classified as alarms, so they cannot override system sound settings. A dedicated app that uses webhook delivery and alarm-priority audio is the only reliable fix.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How can I make TradingView alerts louder on Android? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Route your TradingView alert through a webhook to a dedicated app like TviewAlarm. It receives the webhook and triggers a full alarm — classified as an alarm-priority audio event — which bypasses silent mode entirely. You can also set custom alarm tones within TviewAlarm.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Does TviewAlarm work while my phone is on silent? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. TviewAlarm uses Android's alarm audio channel, which is separate from media and notification volume. It rings at full volume even when your phone is on silent or Do Not Disturb. This is the same channel your phone's built-in alarm clock uses.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I connect TradingView alerts to TviewAlarm? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Download TviewAlarm, copy your personal webhook URL from the Home tab, and paste it into TradingView's alert notification settings under "Webhook URL". That's it — no code, no server, no configuration. Setup takes under 60 seconds.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will TviewAlarm wake me up even if my screen is off? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. TviewAlarm uses high-priority Firebase Cloud Messaging to wake the device before the alarm fires. Even with the screen off, battery saver active, and notification volume at zero, the alarm will ring at full volume.</div>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="https://tviewalarm.com/pages/missed-trade-while-sleeping">Missed a trade while sleeping? How to prevent it<span class="arrow">→</span></a>
+        </div>
+        <div class="related-card">
+          <a href="https://tviewalarm.com/pages/app-loud-trading-alerts-silent-mode">App that rings loud for trading alerts (even on silent)<span class="arrow">→</span></a>
+        </div>
+        <div class="related-card">
+          <a href="https://tviewalarm.com/pages/never-miss-crypto-alert-while-asleep">How to never miss a crypto alert again<span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 TviewAlarm · <a href="https://tviewalarm.com">Home</a> · <a href="https://tviewalarm.com/privacy.html">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>

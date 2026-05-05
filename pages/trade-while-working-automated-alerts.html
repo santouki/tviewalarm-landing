@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Trade While Working a 9-to-5 — Automated Alerts That Do the Watching</title>
+<meta name="description" content="Can't watch charts at work? Set up automated TradingView alerts that alert you the moment your trade setups trigger — even mid-meeting, even on silent.">
+<link rel="canonical" href="https://tviewalarm.com/pages/trade-while-working-automated-alerts">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tviewalarm.com/pages/trade-while-working-automated-alerts">
+<meta property="og:title" content="How to Trade While Working a 9-to-5 — Automated Alerts That Do the Watching">
+<meta property="og:description" content="Automated TradingView alerts that ring your phone the moment your setups trigger — so you can trade around a full-time job.">
+<meta property="og:site_name" content="TviewAlarm">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Trade While Working a 9-to-5 — Automated Alerts That Do the Watching",
+  "description": "How to use TradingView webhooks and TviewAlarm to trade around a full-time job without watching charts.",
+  "author": { "@type": "Organization", "name": "TviewAlarm" },
+  "publisher": { "@type": "Organization", "name": "TviewAlarm", "url": "https://tviewalarm.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I trade while working a full-time job?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Set up precise TradingView alerts for your trade setups, then connect them to TviewAlarm via webhook. When your conditions trigger during work hours, your phone rings — even in meetings. You step out, check the chart, decide whether to act. Your analysis runs 24/7; you only intervene when it matters." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I automate trading alerts for when I'm busy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. TradingView's alert system monitors your conditions continuously. When combined with TviewAlarm's webhook delivery, you get a loud phone alarm the moment any condition is met — day or night, at work or asleep. No chart watching required." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best trading setup for people with a day job?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Swing trading with automated alerts is the most practical approach. Set up key levels and conditions in TradingView, connect to TviewAlarm via webhook for loud phone alarms, and only engage when your setups actually trigger. You do the analysis outside work hours; the alerts do the monitoring during them." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --accent: #C9A96E; --accent-15: rgba(201,169,110,0.15); --accent-06: rgba(201,169,110,0.06); --transition: 0.4s cubic-bezier(0.4,0,0.2,1); }
+[data-theme="dark"] { --bg: #000000; --surface: #0C0C0C; --border: #1C1C1C; --hover: #161616; --text: #F0F0F0; --text-secondary: #7A7A7A; --text-muted: #3A3A3A; --accent-bg: #1A160D; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+::selection { background: var(--accent); color: #000; }
+a { color: var(--accent); text-decoration: none; transition: opacity var(--transition); }
+a:hover { opacity: 0.75; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; border-bottom: 1px solid transparent; transition: all var(--transition); }
+nav.scrolled { background: rgba(0,0,0,0.92); border-bottom-color: var(--border); backdrop-filter: blur(12px); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 1px; color: var(--text); }
+.nav-logo span { color: var(--accent); }
+.nav-cta { padding: 10px 24px; background: var(--accent); color: #000; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; transition: opacity var(--transition); }
+.nav-cta:hover { opacity: 0.85; color: #000; }
+.container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+.breadcrumb { padding: 120px 0 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+.breadcrumb span { color: var(--text-secondary); }
+.article-hero { padding: 32px 0 60px; }
+.article-label { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.article-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 58px); font-weight: 300; line-height: 1.15; color: var(--text); margin-bottom: 24px; }
+.article-hero h1 em { color: var(--accent); font-style: normal; }
+.article-intro { font-size: 18px; color: var(--text-secondary); max-width: 600px; line-height: 1.8; }
+.quick-answer { background: var(--accent-bg); border-left: 3px solid var(--accent); padding: 28px 32px; margin: 48px 0; }
+.quick-answer .qa-label { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.quick-answer p { font-size: 15px; line-height: 1.8; color: var(--text-secondary); }
+.gold-line { width: 32px; height: 1px; background: var(--accent); opacity: 0.5; margin: 56px 0; }
+.section { margin-bottom: 64px; }
+.section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 300; line-height: 1.2; margin-bottom: 20px; color: var(--text); }
+.section h2 em { color: var(--accent); font-style: normal; }
+.section p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+.section p strong { color: var(--text); }
+.pain-list { list-style: none; margin: 24px 0; }
+.pain-list li { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--text-secondary); }
+.pain-list li:last-child { border-bottom: none; }
+.pain-list li .icon { color: #C4392A; font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+.pain-list li .icon.ok { color: var(--accent); }
+.pain-list li strong { color: var(--text); }
+.day-timeline { margin: 32px 0; border-left: 1px solid var(--border); padding-left: 24px; }
+.timeline-event { position: relative; margin-bottom: 28px; }
+.timeline-event::before { content: ''; position: absolute; left: -29px; top: 6px; width: 9px; height: 9px; background: var(--border); border-radius: 50%; }
+.timeline-event.active::before { background: var(--accent); }
+.timeline-event .time { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+.timeline-event .event { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.timeline-event.active .event { color: var(--text); }
+.timeline-event .event strong { color: var(--accent); }
+.steps { margin: 32px 0; }
+.step { display: flex; gap: 24px; margin-bottom: 32px; align-items: flex-start; }
+.step-num { width: 40px; height: 40px; flex-shrink: 0; border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--accent); }
+.step-content h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.step-content p { font-size: 15px; color: var(--text-secondary); margin: 0; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); margin: 40px 0; }
+.testimonial { background: var(--surface); padding: 28px 24px; }
+.testimonial-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+.testimonial-text em { color: var(--text); font-style: normal; }
+.testimonial-author { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+.stars { color: var(--accent); font-size: 12px; margin-bottom: 10px; }
+.cta-block { background: var(--surface); border: 1px solid var(--border); padding: 56px 40px; text-align: center; margin: 64px 0; }
+.cta-block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 300; color: var(--text); margin-bottom: 16px; }
+.cta-block h2 em { color: var(--accent); font-style: normal; }
+.cta-block p { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; padding: 16px 40px; background: var(--accent); color: #000; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; border: none; cursor: pointer; transition: opacity var(--transition); }
+.cta-btn:hover { opacity: 0.85; color: #000; }
+.cta-sub { display: block; margin-top: 16px; font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+.faq { margin: 48px 0; }
+.faq h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 4vw, 36px); font-weight: 300; margin-bottom: 32px; color: var(--text); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; text-align: left; background: none; border: none; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); transition: color var(--transition); }
+.faq-q:hover { color: var(--accent); }
+.faq-q .faq-icon { color: var(--accent); font-size: 20px; transition: transform var(--transition); flex-shrink: 0; margin-left: 16px; }
+.faq-q.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 0 20px; font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+.faq-a.open { display: block; }
+.related { margin: 64px 0; }
+.related h3 { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); }
+.related-card { background: var(--surface); padding: 24px 20px; transition: background var(--transition); }
+.related-card:hover { background: var(--hover); }
+.related-card a { color: var(--text); font-size: 14px; line-height: 1.5; font-weight: 500; }
+.related-card a:hover { color: var(--accent); opacity: 1; }
+.related-card .arrow { color: var(--accent); font-size: 12px; display: block; margin-top: 8px; }
+footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 12px; letter-spacing: 1px; }
+footer a { color: var(--text-muted); }
+footer a:hover { color: var(--accent); opacity: 1; }
+@media (max-width: 640px) { nav { padding: 16px 20px; } .container { padding: 0 20px; } .article-hero h1 { font-size: 32px; } .cta-block { padding: 40px 24px; } }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="https://tviewalarm.com" class="nav-logo">Tview<span>Alarm</span></a>
+  <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="nav-cta">Download Free</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="https://tviewalarm.com">TviewAlarm</a> <span>/ Trade While Working</span></p>
+
+    <div class="article-hero">
+      <p class="article-label">Use Case Guide · 9-to-5 Traders</p>
+      <h1>How to Trade While Working a <em>9-to-5</em></h1>
+      <p class="article-intro">You have a job. Markets don't care. Here's how to set up automated alerts that do the watching while you work — so you only look at charts when something actually happens.</p>
+    </div>
+
+    <div class="quick-answer">
+      <p class="qa-label">Quick Answer</p>
+      <p>To trade while working a 9-to-5, set up TradingView alerts for your setups in advance, then connect them to TviewAlarm via webhook. When your conditions trigger during work hours, your phone rings loudly — even on silent or in meetings — so you step out, evaluate, and act. Your analysis works around the clock. You only engage when it matters.</p>
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="section">
+      <h2>The 9-to-5 Trader's <em>Real Problem</em></h2>
+      <p>You've done the analysis. You know the setups. You know the levels. The problem is that you have eight hours a day where you can't watch a chart — and markets move exactly then.</p>
+      <p>You've tried checking your phone in the bathroom. Watching TradingView alerts scroll in during meetings. Refreshing your portfolio app during lunch. None of it is sustainable, and most of it doesn't even work — push notifications go silent in meetings, and by the time you check, the move is over.</p>
+      <p>The solution isn't to watch more charts. <strong>It's to build a system that watches for you and screams when it matters.</strong></p>
+      <ul class="pain-list">
+        <li><span class="icon">✕</span><div><strong>Charts open in a browser tab</strong> — your boss notices, you get distracted, price moves while you look away</div></li>
+        <li><span class="icon">✕</span><div><strong>Phone on silent in meetings</strong> — TradingView push notifications make no sound, missed entries</div></li>
+        <li><span class="icon">✕</span><div><strong>Checking every 30 minutes</strong> — exhausting, stressful, and still produces late entries</div></li>
+        <li><span class="icon">✕</span><div><strong>Only trading evenings/weekends</strong> — misses the best setups, leaves most of the market inaccessible</div></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>What Your Day Looks Like <em>With Automated Alerts</em></h2>
+
+      <div class="day-timeline">
+        <div class="timeline-event">
+          <div class="time">Evening Before</div>
+          <div class="event">You analyze charts, identify setups, set TradingView alerts for your key levels — price breakouts, indicator crossings, strategy signals. Takes 20–30 minutes.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="time">9:00 AM</div>
+          <div class="event">You arrive at work. Phone on silent. TviewAlarm is connected to your TradingView alerts. Market opens. Your alerts are watching.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="time">10:34 AM</div>
+          <div class="event">You're in a meeting. Your BTC alert triggers. <strong>TviewAlarm rings loudly</strong> — alarm volume, bypasses silent mode. You feel the vibration or hear it.</div>
+        </div>
+        <div class="timeline-event active">
+          <div class="time">10:35 AM — Action</div>
+          <div class="event"><strong>You excuse yourself for 2 minutes.</strong> Check TradingView on your phone. The setup is clean. You place the order on your exchange app. Back in your seat in 3 minutes.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="time">Rest of the Day</div>
+          <div class="event">No chart watching. No refreshing. Phone stays silent. You work. TviewAlarm watches. If another level triggers, you hear it immediately.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="time">Evening</div>
+          <div class="event">Review positions, analyze next day's setups, set new alerts. The system resets. Repeat.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>How to Set It Up in <em>Under 5 Minutes</em></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Download TviewAlarm (free, Android)</h3>
+            <p>Install from Google Play. Copy your personal webhook URL from the Home tab.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Do your evening analysis</h3>
+            <p>Identify setups, draw levels, note conditions. This is when the real work happens — not during market hours.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Set TradingView alerts with webhook</h3>
+            <p>For each setup: create a TradingView alert, add your TviewAlarm URL under Webhook URL, save. Takes 30 seconds per alert.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Set a distinct ringtone for work hours</h3>
+            <p>In TviewAlarm, choose a custom alarm tone that cuts through ambient office noise. Something you'll hear even in a loud environment.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>Go to work. Let the system run.</h3>
+            <p>TviewAlarm monitors continuously. When your setup triggers, you get a loud alarm — even on silent — within seconds of the condition being met.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Why This Works When <em>Push Notifications Don't</em></h2>
+      <p>In a meeting or focused work session, your phone is on silent. Standard push notifications — including TradingView's — are completely silenced. You'll see them when you pick up your phone, which could be 45 minutes after the alert fired.</p>
+      <p>TviewAlarm uses Android's alarm audio channel — the same one your alarm clock uses. <strong>This channel is specifically designed to bypass silent mode.</strong> It's the one exception Android makes: alarms ring even when everything else is quiet.</p>
+      <p>Your TradingView alert fires → TviewAlarm receives the webhook → your phone rings loudly at your desk, even on silent. You hear it immediately. You have time to act.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I work as an engineer. TviewAlarm rang during standup. <em>Excused myself for 2 minutes, placed a BTC trade, walked back in.</em> Team had no idea. Trade ran 4%."</p>
+        <p class="testimonial-author">Neil A. — Software Engineer & Crypto Trader</p>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I do my analysis at 10PM, set alerts, go to sleep. Some fire at work, some overnight. <em>TviewAlarm catches all of them.</em> My trading improved dramatically."</p>
+        <p class="testimonial-author">Jessica T. — Finance Professional & Swing Trader</p>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The system handles the watching. I handle the decisions. <em>That's the only sustainable way to trade with a job.</em> TviewAlarm makes it work."</p>
+        <p class="testimonial-author">Carlos M. — Marketing Manager & Forex Trader</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="container">
+      <h2>Your Job Doesn't Have to <em>Cost You Your Trades</em></h2>
+      <p>Download TviewAlarm and set up your first automated work-hours alert in under 5 minutes. Free to start.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="cta-btn">Download TviewAlarm — Free</a>
+      <span class="cta-sub">Android · Rings even on silent at work · No code required</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How can I trade while working a full-time job? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Set up precise TradingView alerts for your trade setups in the evening, then connect them to TviewAlarm via webhook. When your conditions trigger during work hours, your phone rings loudly — even on silent or in meetings. You step out, evaluate, and act. Your analysis runs 24/7; you only intervene when it matters.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I automate trading alerts for when I'm busy? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. TradingView's alert system monitors your conditions continuously. When combined with TviewAlarm's webhook delivery, you get a loud phone alarm the moment any condition is met — day or night, at work or asleep. You do the analysis once, then the system handles the monitoring.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the best trading setup for people with a day job? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Swing trading with automated alerts is the most practical approach. Analyze charts and set alerts in the evening. TviewAlarm monitors and rings your phone when setups trigger. You engage briefly during work when needed, review and reset positions in the evening. Repeat daily — without chart watching.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will TviewAlarm ring in a meeting even if my phone is on silent? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. TviewAlarm uses Android's alarm audio channel, which bypasses silent mode by system design. Your phone will ring at full alarm volume even when on silent or Do Not Disturb — exactly like your morning alarm clock. You'll hear it in a meeting, at your desk, or across a room.</div>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>Related Guides</h3>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="https://tviewalarm.com/pages/missed-trade-while-sleeping">Missed a trade while sleeping — how to prevent it<span class="arrow">→</span></a>
+        </div>
+        <div class="related-card">
+          <a href="https://tviewalarm.com/pages/never-miss-crypto-alert-while-asleep">How to never miss a crypto alert again<span class="arrow">→</span></a>
+        </div>
+        <div class="related-card">
+          <a href="https://tviewalarm.com">TviewAlarm — Full product overview<span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 TviewAlarm · <a href="https://tviewalarm.com">Home</a> · <a href="https://tviewalarm.com/privacy.html">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+  if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+}
+</script>
+</body>
+</html>
