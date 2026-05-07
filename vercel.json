@@ -5,6 +5,10 @@
       "destination": "/privacy.html"
     },
     {
+      "source": "/pages/:slug",
+      "destination": "/pages/:slug.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

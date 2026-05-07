@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradingView Alerts Blocked by Silent Mode and DND — Permanent Fix</title>
+<meta name="description" content="TradingView alerts go silent when your phone is on silent or DND is active. Here's exactly why — and the only fix that makes alerts ring regardless of your volume settings.">
+<link rel="canonical" href="https://tviewalarm.com/pages/tradingview-alerts-silent-mode">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tviewalarm.com/pages/tradingview-alerts-silent-mode">
+<meta property="og:title" content="TradingView Alerts Blocked by Silent Mode and DND — Permanent Fix">
+<meta property="og:description" content="Silent mode and Do Not Disturb block your TradingView alerts. Here's why — and the alarm-channel fix that bypasses both permanently.">
+<meta property="og:site_name" content="TviewAlarm">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "TradingView Alerts Blocked by Silent Mode and DND — Permanent Fix",
+  "description": "Why Do Not Disturb and silent mode block TradingView alerts — and how alarm-channel delivery via TviewAlarm bypasses both permanently.",
+  "keywords": "tradingview alerts silent mode, tradingview alerts not working silent mode, tradingview dnd android, tradingview alerts blocked do not disturb, trading alerts silent android",
+  "author": { "@type": "Organization", "name": "TviewAlarm" },
+  "publisher": { "@type": "Organization", "name": "TviewAlarm", "url": "https://tviewalarm.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do TradingView alerts go silent in Do Not Disturb mode?",
+      "acceptedAnswer": { "@type": "Answer", "text": "TradingView sends alerts as push notifications on Android's notification channel. Do Not Disturb mode silences all notification-channel audio by design. The alert is delivered — your device just blocks its sound. The fix is to route alerts through a webhook to TviewAlarm, which uses the alarm channel — exempt from DND by Android design." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make TradingView alerts ring even on silent?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Connect TradingView to TviewAlarm via webhook. TviewAlarm fires alarm-channel audio when it receives the webhook — the same channel your alarm clock uses. This channel bypasses both silent mode and Do Not Disturb. Your TradingView alerts will ring at full alarm volume regardless of your phone's sound settings." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a way to bypass Do Not Disturb for trading alerts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Android's alarm audio channel bypasses Do Not Disturb by design — it's the same mechanism that allows your alarm clock to ring even with DND enabled. TviewAlarm uses this channel when it receives your TradingView webhook, making your trading alerts ring through DND every time." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#C9A96E;--red:#C4392A;--transition:0.4s cubic-bezier(0.4,0,0.2,1)}
+[data-theme="dark"]{--bg:#000;--surface:#0C0C0C;--border:#1C1C1C;--hover:#161616;--text:#F0F0F0;--text-secondary:#7A7A7A;--text-muted:#3A3A3A;--accent-bg:#1A160D}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none;transition:opacity var(--transition)}
+a:hover{opacity:.75}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;border-bottom:1px solid transparent;transition:all var(--transition)}
+nav.scrolled{background:rgba(0,0,0,.94);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:1px;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-cta{padding:10px 24px;background:var(--accent);color:#000;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:opacity var(--transition)}
+.nav-cta:hover{opacity:.85;color:#000}
+.container{max-width:780px;margin:0 auto;padding:0 24px}
+.breadcrumb{padding:120px 0 0;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+.breadcrumb span{color:var(--text-secondary)}
+.article-hero{padding:32px 0 48px}
+.article-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+.article-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vw,56px);font-weight:300;line-height:1.12;color:var(--text);margin-bottom:24px}
+.article-hero h1 em{color:var(--accent);font-style:normal}
+.article-intro{font-size:18px;color:var(--text-secondary);line-height:1.8}
+.quick-answer{background:var(--accent-bg);border-left:3px solid var(--accent);padding:28px 32px;margin:48px 0}
+.qa-label{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.quick-answer p{font-size:15px;line-height:1.8;color:var(--text-secondary)}
+.gold-line{width:32px;height:1px;background:var(--accent);opacity:.5;margin:56px 0}
+.section{margin-bottom:64px}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:300;line-height:1.2;margin-bottom:20px;color:var(--text)}
+.section h2 em{color:var(--accent);font-style:normal}
+.section p{font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px}
+.section p strong{color:var(--text)}
+.channel-compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:32px 0}
+.channel{padding:24px 20px;background:var(--surface)}
+.channel.bad{border-top:2px solid var(--red)}
+.channel.good{border-top:2px solid var(--accent)}
+.channel h4{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.channel.bad h4{color:var(--red)}
+.channel.good h4{color:var(--accent)}
+.channel ul{list-style:none}
+.channel ul li{font-size:13px;color:var(--text-secondary);padding:7px 0;border-bottom:1px solid var(--border);line-height:1.5}
+.channel ul li:last-child{border-bottom:none}
+.steps{margin:32px 0}
+.step{display:flex;gap:24px;margin-bottom:32px;align-items:flex-start}
+.step-num{width:40px;height:40px;flex-shrink:0;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--accent)}
+.step-content h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px}
+.step-content p{font-size:15px;color:var(--text-secondary);margin:0;line-height:1.7}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);margin:48px 0}
+.testimonial{background:var(--surface);padding:28px 24px}
+.stars{color:var(--accent);font-size:12px;margin-bottom:10px}
+.testimonial-text{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:16px}
+.testimonial-text em{color:var(--text);font-style:normal}
+.testimonial-author{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+.cta-block{background:var(--surface);border:1px solid var(--border);padding:56px 40px;text-align:center;margin:64px 0;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.urgency-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.cta-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;color:var(--text);margin-bottom:16px;line-height:1.2}
+.cta-block h2 em{color:var(--accent);font-style:normal}
+.cta-block p{font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-block p strong{color:var(--text)}
+.cta-btn{display:inline-block;padding:18px 44px;background:var(--accent);color:#000;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;transition:opacity var(--transition)}
+.cta-btn:hover{opacity:.85;color:#000}
+.cta-sub{display:block;margin-top:14px;font-size:11px;color:var(--text-muted);letter-spacing:1px}
+.faq{margin:48px 0}
+.faq h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,36px);font-weight:300;margin-bottom:32px;color:var(--text)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:var(--text);transition:color var(--transition)}
+.faq-q:hover{color:var(--accent)}
+.faq-icon{color:var(--accent);font-size:20px;flex-shrink:0;margin-left:16px;transition:transform var(--transition)}
+.faq-q.open .faq-icon{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 0 20px;font-size:15px;color:var(--text-secondary);line-height:1.8}
+.faq-a.open{display:block}
+.related-fixes{margin:48px 0}
+.related-fixes h3{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px}
+.fix-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border)}
+.fix-link-card{background:var(--surface);padding:20px;transition:background var(--transition)}
+.fix-link-card:hover{background:var(--hover)}
+.fix-link-card a{color:var(--text);font-size:14px;line-height:1.5;font-weight:500}
+.fix-link-card a:hover{color:var(--accent);opacity:1}
+.fix-link-card .arrow{color:var(--accent);font-size:12px;display:block;margin-top:8px}
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--text-muted);font-size:12px;letter-spacing:1px}
+footer a{color:var(--text-muted)}
+footer a:hover{color:var(--accent);opacity:1}
+@media(max-width:640px){nav{padding:16px 20px}.container{padding:0 20px}.article-hero h1{font-size:30px}.cta-block{padding:40px 20px}.channel-compare{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="https://tviewalarm.com" class="nav-logo">Tview<span>Alarm</span></a>
+  <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="nav-cta">Fix It Now — Free</a>
+</nav>
+<main>
+<div class="container">
+  <p class="breadcrumb"><a href="https://tviewalarm.com">TviewAlarm</a> <span>/ TradingView Alerts Silent Mode</span></p>
+  <div class="article-hero">
+    <p class="article-label">Silent Mode & DND Fix</p>
+    <h1>TradingView Alerts Blocked by <em>Silent Mode</em> — Permanent Fix</h1>
+    <p class="article-intro">You put your phone on silent to sleep. TradingView alerts go silent with it. This is not a setting you can adjust in TradingView — it's a structural Android limitation. Here's the fix that makes your alerts ring regardless.</p>
+  </div>
+
+  <div class="quick-answer">
+    <p class="qa-label">Quick Answer</p>
+    <p>TradingView alerts are silenced by silent mode and Do Not Disturb because they use Android's notification channel — which both settings control. The permanent fix: route alerts via TradingView webhook to <a href="https://tviewalarm.com">TviewAlarm</a>, which uses Android's alarm channel. The alarm channel bypasses both silent mode and DND by design — the same reason your alarm clock still rings when your phone is silent.</p>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="section">
+    <h2>Silent Mode Blocks TradingView. <em>It Doesn't Block Alarms.</em></h2>
+    <p>Android has two completely separate audio systems that traders need to understand. Silent mode and Do Not Disturb control one of them — and leave the other completely untouched.</p>
+
+    <div class="channel-compare">
+      <div class="channel bad">
+        <h4>Notification Channel — Controlled by Silent Mode</h4>
+        <ul>
+          <li>✕ Silent mode mutes it completely</li>
+          <li>✕ Do Not Disturb blocks all audio</li>
+          <li>✕ Notification volume slider controls it</li>
+          <li>✕ Used by TradingView push alerts</li>
+          <li>✕ Used by email, social, all apps</li>
+          <li>✕ Will not ring while you sleep</li>
+        </ul>
+      </div>
+      <div class="channel good">
+        <h4>Alarm Channel — Exempt from Silent Mode</h4>
+        <ul>
+          <li>✓ Silent mode cannot touch it</li>
+          <li>✓ Do Not Disturb cannot block it</li>
+          <li>✓ Separate alarm volume slider</li>
+          <li>✓ Used by your alarm clock app</li>
+          <li>✓ Used by TviewAlarm</li>
+          <li>✓ Rings at full volume while you sleep</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>TviewAlarm moves your TradingView alerts from the notification channel to the alarm channel. That's the entire fix. <strong>Your phone's silent mode, DND, and volume settings stop mattering entirely</strong> for the alerts you care about.</p>
+  </div>
+
+  <div class="section">
+    <h2>Set Up the Fix — <em>60 Seconds</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Download TviewAlarm (free, Android)</h3>
+          <p>Install from Google Play. Your webhook URL is on the Home tab immediately after sign-in.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Add your webhook URL to TradingView alerts</h3>
+          <p>Edit any alert → Notifications tab → enable Webhook URL → paste your TviewAlarm URL → Save. Works across all markets and alert types.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Test: silent mode on, screen off</h3>
+          <p>The alarm rings at full volume within 1–3 seconds of the test alert firing. Silent mode is no longer a factor in whether your trades wake you up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"I never knew the alarm channel was separate from silent mode. <em>TviewAlarm rang at full volume with my phone completely silenced.</em> This is the fix I've been looking for."</p>
+      <p class="testimonial-author">Farid N. — Crypto Trader</p>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"DND exception lists didn't work on my Samsung. <em>TviewAlarm bypasses DND entirely</em> because it uses the alarm channel. Completely different approach — and it works."</p>
+      <p class="testimonial-author">Ingrid K. — Forex Trader</p>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Tested with every restriction on: silent mode, DND, screen off, battery saver. <em>It rang every single time.</em>"</p>
+      <p class="testimonial-author">Owen P. — Swing Trader</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="container">
+    <p class="urgency-label">Silent Mode Is Active Right Now While You Sleep</p>
+    <h2>Install TviewAlarm Now — Before You Miss <em>Another Breakout Tonight</em></h2>
+    <p>Your phone goes on silent tonight. Your TradingView alerts go silent with it. <strong>Install TviewAlarm in 60 seconds and make sure the next breakout wakes you up.</strong></p>
+    <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="cta-btn">Install TviewAlarm Now — Free</a>
+    <span class="cta-sub">Android · Bypasses silent mode + DND · Alarm-channel delivery · No code</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Why do TradingView alerts go silent in Do Not Disturb mode? <span class="faq-icon">+</span></button>
+      <div class="faq-a">TradingView sends alerts as push notifications on Android's notification channel. Do Not Disturb mode silences all notification-channel audio by design. The alert is delivered — your device just blocks its sound. Route alerts through a webhook to TviewAlarm, which uses the alarm channel — exempt from DND by Android design.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do I make TradingView alerts ring even on silent? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Connect TradingView to TviewAlarm via webhook. TviewAlarm fires alarm-channel audio when it receives the webhook — the same channel your alarm clock uses. This channel bypasses both silent mode and Do Not Disturb. Your TradingView alerts ring at full alarm volume regardless of your phone's sound settings.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is there a way to bypass Do Not Disturb for trading alerts? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes. Android's alarm audio channel bypasses DND by design — it's the same mechanism that allows your alarm clock to ring even with DND enabled. TviewAlarm uses this channel when it receives your TradingView webhook, making your trading alerts ring through DND every time, without any special DND exception configuration.</div>
+    </div>
+  </div>
+
+  <div class="related-fixes">
+    <h3>Related Fixes</h3>
+    <div class="fix-links">
+      <div class="fix-link-card"><a href="https://tviewalarm.com/pages/tradingview-alerts-not-waking-me-up">Fix tradingview alerts not waking you up — complete guide<span class="arrow">→</span></a></div>
+      <div class="fix-link-card"><a href="https://tviewalarm.com/pages/trading-alert-no-sound-android">Fix trading alert no sound on Android — permanent fix<span class="arrow">→</span></a></div>
+      <div class="fix-link-card"><a href="https://tviewalarm.com/pages/android-alarm-tradingview-alerts">Android alarm system for TradingView alerts<span class="arrow">→</span></a></div>
+    </div>
+  </div>
+</div>
+</main>
+<footer><div class="container"><p>© 2025 TviewAlarm · <a href="https://tviewalarm.com">Home</a> · <a href="https://tviewalarm.com/privacy.html">Privacy</a></p></div></footer>
+<script>
+document.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)});
+function toggleFaq(btn){const a=btn.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');btn.classList.add('open')}}
+</script>
+</body>
+</html>

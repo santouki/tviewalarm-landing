@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradingView Alerts Not Working — Every Cause and the Permanent Fix</title>
+<meta name="description" content="TradingView alerts not working? Here are all the reasons — silent delivery, delayed notifications, background restrictions — and the one fix that solves all of them permanently.">
+<link rel="canonical" href="https://tviewalarm.com/pages/tradingview-alerts-not-working">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tviewalarm.com/pages/tradingview-alerts-not-working">
+<meta property="og:title" content="TradingView Alerts Not Working — Every Cause and the Permanent Fix">
+<meta property="og:description" content="Every reason TradingView alerts stop working — and the permanent fix that routes them through a webhook to guarantee delivery.">
+<meta property="og:site_name" content="TviewAlarm">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "TradingView Alerts Not Working — Every Cause and the Permanent Fix",
+  "description": "All reasons TradingView alerts fail — silent delivery, Doze delays, background app killing — and the webhook-based permanent fix.",
+  "keywords": "tradingview alerts not working, tradingview alerts not working android, why are my tradingview alerts not working, tradingview alert fired no sound, tradingview notifications not working",
+  "author": { "@type": "Organization", "name": "TviewAlarm" },
+  "publisher": { "@type": "Organization", "name": "TviewAlarm", "url": "https://tviewalarm.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why are my TradingView alerts not working?",
+      "acceptedAnswer": { "@type": "Answer", "text": "TradingView alerts can fail in several ways: the notification is delivered but silenced by Do Not Disturb, the alert arrives late due to Android Doze mode, or the app is killed in the background by battery optimization before receiving the push. The root cause in all cases is reliance on the notification channel. Routing alerts through a webhook to TviewAlarm bypasses all of these failure points permanently." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did TradingView alert fire but no sound?",
+      "acceptedAnswer": { "@type": "Answer", "text": "TradingView alerts use Android's notification audio channel, which is silenced by Do Not Disturb and low notification volume. The alert fired and was delivered — your phone just made no sound because the channel was muted. Fix: connect TradingView to TviewAlarm via webhook. TviewAlarm uses the alarm channel, which cannot be silenced." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I fix TradingView alerts not working on Android?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The permanent fix for TradingView alerts not working on Android is to route them through a webhook to TviewAlarm instead of relying on push notifications. TviewAlarm uses alarm-priority audio delivery that bypasses Do Not Disturb, Doze mode, and battery restrictions. Setup: copy your TviewAlarm webhook URL, paste it into any TradingView alert's Webhook URL field, save. Done in 60 seconds." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#C9A96E;--red:#C4392A;--transition:0.4s cubic-bezier(0.4,0,0.2,1)}
+[data-theme="dark"]{--bg:#000;--surface:#0C0C0C;--border:#1C1C1C;--hover:#161616;--text:#F0F0F0;--text-secondary:#7A7A7A;--text-muted:#3A3A3A;--accent-bg:#1A160D}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none;transition:opacity var(--transition)}
+a:hover{opacity:.75}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;border-bottom:1px solid transparent;transition:all var(--transition)}
+nav.scrolled{background:rgba(0,0,0,.94);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:1px;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-cta{padding:10px 24px;background:var(--accent);color:#000;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:opacity var(--transition)}
+.nav-cta:hover{opacity:.85;color:#000}
+.container{max-width:780px;margin:0 auto;padding:0 24px}
+.breadcrumb{padding:120px 0 0;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+.breadcrumb span{color:var(--text-secondary)}
+.article-hero{padding:32px 0 48px}
+.article-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+.article-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vw,56px);font-weight:300;line-height:1.12;color:var(--text);margin-bottom:24px}
+.article-hero h1 em{color:var(--accent);font-style:normal}
+.article-intro{font-size:18px;color:var(--text-secondary);line-height:1.8}
+.quick-answer{background:var(--accent-bg);border-left:3px solid var(--accent);padding:28px 32px;margin:48px 0}
+.qa-label{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.quick-answer p{font-size:15px;line-height:1.8;color:var(--text-secondary)}
+.gold-line{width:32px;height:1px;background:var(--accent);opacity:.5;margin:56px 0}
+.section{margin-bottom:64px}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:300;line-height:1.2;margin-bottom:20px;color:var(--text)}
+.section h2 em{color:var(--accent);font-style:normal}
+.section p{font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px}
+.section p strong{color:var(--text)}
+.cause-list{list-style:none;margin:24px 0}
+.cause-list li{padding:18px 20px;background:var(--surface);border-bottom:1px solid var(--border);font-size:15px;color:var(--text-secondary);line-height:1.7}
+.cause-list li:first-child{border-top:1px solid var(--border)}
+.cause-list li strong{color:var(--text);display:block;margin-bottom:4px;font-size:14px}
+.cause-list li .cause-tag{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);display:inline-block;margin-bottom:6px}
+.steps{margin:32px 0}
+.step{display:flex;gap:24px;margin-bottom:32px;align-items:flex-start}
+.step-num{width:40px;height:40px;flex-shrink:0;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--accent)}
+.step-content h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px}
+.step-content p{font-size:15px;color:var(--text-secondary);margin:0;line-height:1.7}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);margin:48px 0}
+.testimonial{background:var(--surface);padding:28px 24px}
+.stars{color:var(--accent);font-size:12px;margin-bottom:10px}
+.testimonial-text{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:16px}
+.testimonial-text em{color:var(--text);font-style:normal}
+.testimonial-author{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+.cta-block{background:var(--surface);border:1px solid var(--border);padding:56px 40px;text-align:center;margin:64px 0;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.urgency-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.cta-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;color:var(--text);margin-bottom:16px;line-height:1.2}
+.cta-block h2 em{color:var(--accent);font-style:normal}
+.cta-block p{font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-block p strong{color:var(--text)}
+.cta-btn{display:inline-block;padding:18px 44px;background:var(--accent);color:#000;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;transition:opacity var(--transition)}
+.cta-btn:hover{opacity:.85;color:#000}
+.cta-sub{display:block;margin-top:14px;font-size:11px;color:var(--text-muted);letter-spacing:1px}
+.faq{margin:48px 0}
+.faq h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,36px);font-weight:300;margin-bottom:32px;color:var(--text)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:var(--text);transition:color var(--transition)}
+.faq-q:hover{color:var(--accent)}
+.faq-icon{color:var(--accent);font-size:20px;flex-shrink:0;margin-left:16px;transition:transform var(--transition)}
+.faq-q.open .faq-icon{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 0 20px;font-size:15px;color:var(--text-secondary);line-height:1.8}
+.faq-a.open{display:block}
+.related-fixes{margin:48px 0}
+.related-fixes h3{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px}
+.fix-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border)}
+.fix-link-card{background:var(--surface);padding:20px;transition:background var(--transition)}
+.fix-link-card:hover{background:var(--hover)}
+.fix-link-card a{color:var(--text);font-size:14px;line-height:1.5;font-weight:500}
+.fix-link-card a:hover{color:var(--accent);opacity:1}
+.fix-link-card .arrow{color:var(--accent);font-size:12px;display:block;margin-top:8px}
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--text-muted);font-size:12px;letter-spacing:1px}
+footer a{color:var(--text-muted)}
+footer a:hover{color:var(--accent);opacity:1}
+@media(max-width:640px){nav{padding:16px 20px}.container{padding:0 20px}.article-hero h1{font-size:30px}.cta-block{padding:40px 20px}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="https://tviewalarm.com" class="nav-logo">Tview<span>Alarm</span></a>
+  <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="nav-cta">Fix It Now — Free</a>
+</nav>
+<main>
+<div class="container">
+  <p class="breadcrumb"><a href="https://tviewalarm.com">TviewAlarm</a> <span>/ TradingView Alerts Not Working</span></p>
+  <div class="article-hero">
+    <p class="article-label">Broad Fix Guide · All Android Devices</p>
+    <h1>TradingView Alerts <em>Not Working</em> — Every Cause, One Fix</h1>
+    <p class="article-intro">TradingView alerts fail in multiple different ways — silent delivery, late arrival, or no delivery at all. Here is every cause, and the single permanent fix that resolves all of them at once.</p>
+  </div>
+
+  <div class="quick-answer">
+    <p class="qa-label">Quick Answer</p>
+    <p>TradingView alerts stop working because they rely on Android's notification channel — which is silenced by DND, delayed by Doze mode, and blocked by battery optimization. The permanent fix is to route alerts through a TradingView webhook to <a href="https://tviewalarm.com">TviewAlarm</a>, which delivers alarm-priority audio that bypasses every restriction responsible for alert failure.</p>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="section">
+    <h2>Every Reason TradingView Alerts <em>Stop Working</em></h2>
+    <p>TradingView alerts fail at three distinct points in the delivery chain. Identify which one is breaking your alerts — or assume all three are active at night, because they usually are.</p>
+    <ul class="cause-list">
+      <li>
+        <span class="cause-tag">Sound Failure</span>
+        <strong>Alert delivered — no sound produced</strong>
+        The notification arrived on your device but your phone made no sound. This is Do Not Disturb or notification volume at zero. The alert is in your notification tray with the correct timestamp. Your phone was simply instructed not to play audio for it.
+      </li>
+      <li>
+        <span class="cause-tag">Timing Failure</span>
+        <strong>Alert arrived — but minutes late</strong>
+        Android Doze mode batches push notifications when your screen is off. Your alert may have fired at 2:14 AM and arrived at 2:22 AM. On a fast-moving breakout, the clean entry is gone by then.
+      </li>
+      <li>
+        <span class="cause-tag">Delivery Failure</span>
+        <strong>Alert never arrived at all</strong>
+        Battery optimization on Samsung, Xiaomi, Oppo, and similar devices kills TradingView in the background. The alert fired — TradingView's servers sent the push — but your device was no longer running TradingView to receive it.
+      </li>
+    </ul>
+    <p>All three causes share the same root: <strong>dependence on the notification delivery system.</strong> The fix is to exit that system entirely.</p>
+  </div>
+
+  <div class="section">
+    <h2>The Fix: Exit the Notification System. <em>Use Webhooks.</em></h2>
+    <p>TradingView has a webhook feature that sends an HTTP request to a URL you specify when an alert fires. TviewAlarm gives you that URL. When TradingView hits it:</p>
+    <p>→ TviewAlarm's server receives the request instantly (no Doze delay — it's a server receiving a web request, not a phone receiving a push)<br>
+    → Sends a high-priority FCM push that wakes your device regardless of sleep state<br>
+    → Fires Android alarm-channel audio — bypassing DND, silent mode, and volume settings</p>
+    <p>All three failure causes — sound, timing, delivery — are resolved simultaneously. <strong>This is not a workaround. It's a better delivery architecture.</strong></p>
+  </div>
+
+  <div class="section">
+    <h2>Fix TradingView Alerts Not Working — <em>4 Steps</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Download TviewAlarm (free, Android)</h3>
+          <p>Install from Google Play. Sign in. Your webhook URL is on the Home tab immediately.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Copy your personal webhook URL</h3>
+          <p>One tap. This is the URL TradingView will call when each alert fires.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Paste into every TradingView alert</h3>
+          <p>Edit alert → Notifications → Webhook URL → paste → Save. Works for all markets and all alert types.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Test it — alert fires, phone rings in 1–3 seconds</h3>
+          <p>DND on. Screen off. Trigger test alert. Full alarm volume. Every failure mode resolved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Three different problems — alerts sometimes silent, sometimes late, sometimes never arrived. <em>TviewAlarm fixed all three at once.</em> One webhook URL, done."</p>
+      <p class="testimonial-author">Kevin R. — Crypto Trader</p>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"I didn't realize Doze mode was delaying my alerts by 8 minutes. <em>8 minutes is the entire entry window on a fast BTC move.</em> TviewAlarm delivers in under 3 seconds."</p>
+      <p class="testimonial-author">Petra M. — Algorithmic Trader</p>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"My Samsung was killing TradingView overnight. <em>Zero alerts received between midnight and 6AM.</em> TviewAlarm bypasses the whole issue."</p>
+      <p class="testimonial-author">James T. — Swing Trader</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="container">
+    <p class="urgency-label">Every Alert You Have Set Is at Risk Tonight</p>
+    <h2>Install TviewAlarm Now — Before You Miss <em>Another Breakout Tonight</em></h2>
+    <p>Sound failure, delivery delay, no delivery at all — <strong>one of these is happening to your alerts every night.</strong> Fix all three in 60 seconds. Free to start.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="cta-btn">Install TviewAlarm Now — Free</a>
+    <span class="cta-sub">Android · Fixes all TradingView alert failures · No code required</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Why are my TradingView alerts not working? <span class="faq-icon">+</span></button>
+      <div class="faq-a">TradingView alerts fail at three points: they're silenced by DND (sound failure), delayed by Android Doze mode (timing failure), or never received because battery optimization killed TradingView in the background (delivery failure). The root cause of all three is reliance on Android's notification channel. Routing via webhook to TviewAlarm bypasses all three failure points permanently.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Why did TradingView alert fire but no sound? <span class="faq-icon">+</span></button>
+      <div class="faq-a">TradingView uses Android's notification audio channel, which is silenced by Do Not Disturb and notification volume settings. The alert fired and was delivered to your phone — your device just produced no sound because the channel was muted. Fix: connect via webhook to TviewAlarm, which uses the alarm channel that cannot be silenced.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do I fix TradingView alerts not working on Android? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Route your TradingView alerts through a webhook to TviewAlarm instead of relying on push notifications. Copy your TviewAlarm webhook URL, paste it into the Webhook URL field in your TradingView alert settings, and save. TviewAlarm delivers alarm-priority audio that bypasses DND, Doze, and battery restrictions — fixing every type of alert failure.</div>
+    </div>
+  </div>
+
+  <div class="related-fixes">
+    <h3>Related Fixes</h3>
+    <div class="fix-links">
+      <div class="fix-link-card"><a href="https://tviewalarm.com/pages/tradingview-alerts-not-waking-me-up">Fix tradingview alerts not waking you up — complete guide<span class="arrow">→</span></a></div>
+      <div class="fix-link-card"><a href="https://tviewalarm.com/pages/tradingview-webhook-setup-android">TradingView webhook setup guide — phone alarm in 60 seconds<span class="arrow">→</span></a></div>
+      <div class="fix-link-card"><a href="https://tviewalarm.com/pages/trading-alert-no-sound-android">Fix trading alert no sound on Android — permanent fix<span class="arrow">→</span></a></div>
+    </div>
+  </div>
+</div>
+</main>
+<footer><div class="container"><p>© 2025 TviewAlarm · <a href="https://tviewalarm.com">Home</a> · <a href="https://tviewalarm.com/privacy.html">Privacy</a></p></div></footer>
+<script>
+document.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)});
+function toggleFaq(btn){const a=btn.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');btn.classList.add('open')}}
+</script>
+</body>
+</html>

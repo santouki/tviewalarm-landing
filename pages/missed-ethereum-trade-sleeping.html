@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missed an ETH Trade While Sleeping — Make Sure It Never Happens Again</title>
+<meta name="description" content="You missed an Ethereum trade while you slept. The alert fired — your phone stayed silent. Here's the system that wakes you up the next time ETH moves, no matter the hour.">
+<link rel="canonical" href="https://tviewalarm.com/pages/missed-ethereum-trade-sleeping">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tviewalarm.com/pages/missed-ethereum-trade-sleeping">
+<meta property="og:title" content="Missed an ETH Trade While Sleeping — Make Sure It Never Happens Again">
+<meta property="og:description" content="ETH doesn't stop moving while you sleep. Set up a loud alarm that wakes you the moment Ethereum hits your level — even at 3AM, even on silent.">
+<meta property="og:site_name" content="TviewAlarm">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Missed an ETH Trade While Sleeping — Make Sure It Never Happens Again",
+  "description": "How to prevent missing Ethereum and crypto trades overnight using TradingView webhooks and alarm-based mobile delivery.",
+  "keywords": "missed eth trade sleeping, missed ethereum alert overnight, ethereum alert didnt ring, how to get eth alerts at night, crypto alert eth android, missed ethereum trade",
+  "author": { "@type": "Organization", "name": "TviewAlarm" },
+  "publisher": { "@type": "Organization", "name": "TviewAlarm", "url": "https://tviewalarm.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I get an alarm when Ethereum hits a price target?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Set an ETH price alert in TradingView with your target price. Add your TviewAlarm webhook URL to the alert's notification settings. When ETH hits that level, TviewAlarm triggers a loud alarm on your Android phone — bypassing silent mode and Do Not Disturb — within seconds of the alert firing." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my Ethereum alert not wake me up?",
+      "acceptedAnswer": { "@type": "Answer", "text": "TradingView sends ETH price alerts as push notifications on Android's notification channel, which is silenced by Do Not Disturb and low notification volume settings. The alert fired — your phone just made no sound. Fix: connect TradingView to TviewAlarm via webhook. TviewAlarm uses alarm-channel audio that bypasses all notification restrictions." }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I monitor Ethereum while sleeping?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Set ETH price alerts in TradingView for your key levels, then connect them to TviewAlarm via webhook. When ETH hits your level — at any time, day or night — your phone rings loudly, waking you up. You only engage when the market reaches your exact conditions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TviewAlarm work for Ethereum and altcoin alerts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. TviewAlarm works with any TradingView alert — ETH, BTC, SOL, any altcoin available on TradingView, as well as forex, stocks, and indices. Any alert you can set in TradingView can be connected to TviewAlarm via webhook to trigger a loud alarm." }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#C9A96E;--red:#C4392A;--green:#2D8653;--transition:0.4s cubic-bezier(0.4,0,0.2,1)}
+[data-theme="dark"]{--bg:#000;--surface:#0C0C0C;--border:#1C1C1C;--hover:#161616;--text:#F0F0F0;--text-secondary:#7A7A7A;--text-muted:#3A3A3A;--accent-bg:#1A160D}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none;transition:opacity var(--transition)}
+a:hover{opacity:.75}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;border-bottom:1px solid transparent;transition:all var(--transition)}
+nav.scrolled{background:rgba(0,0,0,.94);border-bottom-color:var(--border);backdrop-filter:blur(14px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:1px;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-cta{padding:10px 24px;background:var(--accent);color:#000;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:opacity var(--transition)}
+.nav-cta:hover{opacity:.85;color:#000}
+.container{max-width:780px;margin:0 auto;padding:0 24px}
+.breadcrumb{padding:120px 0 0;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+.breadcrumb span{color:var(--text-secondary)}
+.article-hero{padding:32px 0 48px}
+.article-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+.article-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vw,56px);font-weight:300;line-height:1.12;color:var(--text);margin-bottom:24px}
+.article-hero h1 em{color:var(--accent);font-style:normal}
+.article-intro{font-size:18px;color:var(--text-secondary);line-height:1.8}
+.quick-answer{background:var(--accent-bg);border-left:3px solid var(--accent);padding:28px 32px;margin:48px 0}
+.qa-label{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.quick-answer p{font-size:15px;line-height:1.8;color:var(--text-secondary)}
+.gold-line{width:32px;height:1px;background:var(--accent);opacity:.5;margin:56px 0}
+.section{margin-bottom:64px}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:300;line-height:1.2;margin-bottom:20px;color:var(--text)}
+.section h2 em{color:var(--accent);font-style:normal}
+.section p{font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px}
+.section p strong{color:var(--text)}
+
+/* TRADE SNAPSHOT */
+.trade-snap{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--red);padding:28px 32px;margin:32px 0}
+.trade-snap .ts-label{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.trade-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px}
+.trade-row:last-child{border-bottom:none}
+.trade-row .tr-key{color:var(--text-muted);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.trade-row .tr-val{color:var(--text);font-weight:500}
+.trade-row .tr-val.red{color:var(--red)}
+.trade-row .tr-val.gold{color:var(--accent)}
+
+/* PAIN LIST */
+.pain-list{list-style:none;margin:24px 0}
+.pain-list li{display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--text-secondary)}
+.pain-list li:last-child{border-bottom:none}
+.pain-list li .icon{color:var(--red);font-size:16px;margin-top:2px;flex-shrink:0}
+.pain-list li .icon.ok{color:var(--accent)}
+.pain-list li strong{color:var(--text)}
+
+/* COIN GRID */
+.coin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);margin:32px 0}
+.coin-card{background:var(--surface);padding:20px 16px;text-align:center}
+.coin-symbol{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--accent);margin-bottom:4px}
+.coin-name{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
+
+.steps{margin:32px 0}
+.step{display:flex;gap:24px;margin-bottom:32px;align-items:flex-start}
+.step-num{width:40px;height:40px;flex-shrink:0;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--accent)}
+.step-content h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px}
+.step-content p{font-size:15px;color:var(--text-secondary);margin:0;line-height:1.7}
+
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);margin:48px 0}
+.testimonial{background:var(--surface);padding:28px 24px}
+.stars{color:var(--accent);font-size:12px;margin-bottom:10px}
+.testimonial-text{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:16px}
+.testimonial-text em{color:var(--text);font-style:normal}
+.testimonial-author{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+
+.cta-block{background:var(--surface);border:1px solid var(--border);padding:56px 40px;text-align:center;margin:64px 0;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.urgency-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.cta-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;color:var(--text);margin-bottom:16px;line-height:1.2}
+.cta-block h2 em{color:var(--accent);font-style:normal}
+.cta-block p{font-size:15px;color:var(--text-secondary);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-block p strong{color:var(--text)}
+.cta-btn{display:inline-block;padding:18px 44px;background:var(--accent);color:#000;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;transition:opacity var(--transition)}
+.cta-btn:hover{opacity:.85;color:#000}
+.cta-sub{display:block;margin-top:14px;font-size:11px;color:var(--text-muted);letter-spacing:1px}
+
+.faq{margin:48px 0}
+.faq h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,36px);font-weight:300;margin-bottom:32px;color:var(--text)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:var(--text);transition:color var(--transition)}
+.faq-q:hover{color:var(--accent)}
+.faq-icon{color:var(--accent);font-size:20px;flex-shrink:0;margin-left:16px;transition:transform var(--transition)}
+.faq-q.open .faq-icon{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 0 20px;font-size:15px;color:var(--text-secondary);line-height:1.8}
+.faq-a.open{display:block}
+
+.related{margin:64px 0 32px}
+.related h3{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border)}
+.related-card{background:var(--surface);padding:24px 20px;transition:background var(--transition)}
+.related-card:hover{background:var(--hover)}
+.related-card a{color:var(--text);font-size:14px;line-height:1.5;font-weight:500}
+.related-card a:hover{color:var(--accent);opacity:1}
+.related-card .arrow{color:var(--accent);font-size:12px;display:block;margin-top:8px}
+
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--text-muted);font-size:12px;letter-spacing:1px}
+footer a{color:var(--text-muted)}
+footer a:hover{color:var(--accent);opacity:1}
+
+@media(max-width:640px){nav{padding:16px 20px}.container{padding:0 20px}.article-hero h1{font-size:30px}.cta-block{padding:40px 20px}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="https://tviewalarm.com" class="nav-logo">Tview<span>Alarm</span></a>
+  <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="nav-cta">Never Miss ETH Again — Free</a>
+</nav>
+
+<main>
+<div class="container">
+
+  <p class="breadcrumb"><a href="https://tviewalarm.com">TviewAlarm</a> <span>/ Missed ETH Trade While Sleeping</span></p>
+
+  <div class="article-hero">
+    <p class="article-label">Post-Incident · Ethereum</p>
+    <h1>You Missed an ETH Trade <em>While Sleeping.</em><br>Here's How to Make Sure It Never Happens Again.</h1>
+    <p class="article-intro">Ethereum moves fast. It doesn't wait for you to wake up, check your phone, or wonder if your alert fired. You set the alert. It fired. Your phone stayed silent. Here is the permanent fix.</p>
+  </div>
+
+  <div class="quick-answer">
+    <p class="qa-label">Quick Answer</p>
+    <p>To get woken up when ETH hits your level, set a TradingView price alert on Ethereum and connect it to <a href="https://tviewalarm.com">TviewAlarm</a> via webhook. When your ETH alert fires — at any hour — TviewAlarm triggers alarm-priority audio on your Android phone, bypassing silent mode and Do Not Disturb. You wake up within seconds of the move starting, not hours after it ends.</p>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="section">
+    <h2>The Trade That <em>Already Happened</em> Without You</h2>
+    <p>You identified the level. You watched ETH compress into resistance for days. You set the alert at your breakout level and went to sleep trusting it would ring.</p>
+
+    <div class="trade-snap">
+      <p class="ts-label">What you woke up to</p>
+      <div class="trade-row"><span class="tr-key">Asset</span><span class="tr-val">ETHUSDT</span></div>
+      <div class="trade-row"><span class="tr-key">Alert fired</span><span class="tr-val">02:47 AM</span></div>
+      <div class="trade-row"><span class="tr-key">You woke up</span><span class="tr-val">07:15 AM</span></div>
+      <div class="trade-row"><span class="tr-key">Move missed</span><span class="tr-val red">+6.2% in 4 hours</span></div>
+      <div class="trade-row"><span class="tr-key">Entry you planned</span><span class="tr-val">Available for 3 minutes after breakout</span></div>
+      <div class="trade-row"><span class="tr-key">Your alert status</span><span class="tr-val gold">Fired correctly. Delivered silently.</span></div>
+    </div>
+
+    <p>The alert wasn't broken. TradingView did its job. The failure was in the delivery: your phone received a push notification, Android silenced it because Do Not Disturb was active, and you slept through the entire move.</p>
+    <p><strong>This is a delivery problem, not a setup problem.</strong> And it has a permanent fix.</p>
+  </div>
+
+  <div class="section">
+    <h2>Why Your ETH Alert Didn't <em>Make a Sound</em></h2>
+    <p>Ethereum's most significant overnight moves happen during low-liquidity windows — typically 11PM–4AM UTC — when institutional flows can push price through levels without retail resistance. These are exactly the hours when Android's notification system is most aggressively restricted.</p>
+    <ul class="pain-list">
+      <li><span class="icon">✕</span><div><strong>Do Not Disturb silences push notifications.</strong> If you sleep with DND on, your TradingView ETH alert produces zero sound — regardless of how it's configured.</div></li>
+      <li><span class="icon">✕</span><div><strong>Notification volume ≠ alarm volume.</strong> Your alarm clock can be at max while TradingView notifications play at notification volume — which may be at zero.</div></li>
+      <li><span class="icon">✕</span><div><strong>Android Doze mode delays delivery.</strong> Your alert may have arrived 3–5 minutes after ETH broke the level — too late for a clean entry on a fast-moving market.</div></li>
+      <li><span class="icon ok">✓</span><div><strong>The fix bypasses all of this.</strong> TviewAlarm receives the webhook before your push notification would have been delivered, and fires alarm-priority audio that DND cannot block.</div></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Works for ETH — And Every Other <em>Market You Trade</em></h2>
+    <p>One TviewAlarm webhook URL works for every TradingView alert you set — on any market, any timeframe, any condition.</p>
+    <div class="coin-grid">
+      <div class="coin-card"><div class="coin-symbol">ETH</div><div class="coin-name">Ethereum</div></div>
+      <div class="coin-card"><div class="coin-symbol">BTC</div><div class="coin-name">Bitcoin</div></div>
+      <div class="coin-card"><div class="coin-symbol">SOL</div><div class="coin-name">Solana</div></div>
+      <div class="coin-card"><div class="coin-symbol">BNB</div><div class="coin-name">BNB Chain</div></div>
+      <div class="coin-card"><div class="coin-symbol">XRP</div><div class="coin-name">Ripple</div></div>
+      <div class="coin-card"><div class="coin-symbol">FOREX</div><div class="coin-name">All Pairs</div></div>
+    </div>
+    <p>Any TradingView alert — price level, indicator signal, Pine Script strategy — can be routed through TviewAlarm. Set one webhook URL, use it for every alert across every market.</p>
+  </div>
+
+  <div class="section">
+    <h2>The 4-Step Fix — <em>Set Up Before the Next ETH Move</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Download TviewAlarm on Android</h3>
+          <p>Free on Google Play. Sign in and copy your personal webhook URL from the Home tab. 30 seconds.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Set your ETH alert in TradingView</h3>
+          <p>Create a price alert on ETHUSDT for your level. Under Notifications → enable Webhook URL → paste your TviewAlarm URL → Save.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Set a custom alarm tone for ETH</h3>
+          <p>In TviewAlarm, choose a distinct tone for this webhook. You'll know it's an ETH alert before you open your eyes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Test on silent. Sleep knowing you're covered.</h3>
+          <p>Put your phone on silent. Trigger the test alert. It rings at full alarm volume. ETH can move any time it wants — you'll wake up for it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"ETH broke $3,200 at 1:30AM. TviewAlarm rang. <em>I was in the trade within 3 minutes of the breakout.</em> First time I've caught a major ETH move overnight."</p>
+      <p class="testimonial-author">Antoine B. — Ethereum Trader</p>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Set ETH and BTC alerts with different tones. <em>I know which coin moved before I even look at the screen.</em> This is how trading should work."</p>
+      <p class="testimonial-author">Yuki T. — Multi-Asset Crypto Trader</p>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Missed a 5% ETH run. Set up TviewAlarm same morning. <em>Caught the next one at 4AM.</em> Paid for itself immediately."</p>
+      <p class="testimonial-author">Isabel R. — Swing Trader</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="cta-block">
+  <div class="container">
+    <p class="urgency-label">ETH Doesn't Wait. Neither Should Your Alarm.</p>
+    <h2>Install TviewAlarm Now — Before You Miss <em>Another Breakout Tonight</em></h2>
+    <p>Every night without TviewAlarm is another night a move can pass while you sleep. <strong>Set up your ETH alarm in 60 seconds — before the next one fires on silent.</strong></p>
+    <a href="https://play.google.com/store/apps/details?id=com.tviewalarm" class="cta-btn">Install TviewAlarm Now — Free</a>
+    <span class="cta-sub">Android · ETH, BTC, all crypto · Rings even on silent · No code</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do I get an alarm when Ethereum hits a price target? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Set an ETH price alert in TradingView with your target price. Add your TviewAlarm webhook URL to the alert's notification settings. When ETH hits that level, TviewAlarm triggers a loud alarm on your Android phone — bypassing silent mode and Do Not Disturb — within seconds of the alert firing.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Why did my Ethereum alert not wake me up? <span class="faq-icon">+</span></button>
+      <div class="faq-a">TradingView sends ETH price alerts as push notifications on Android's notification channel, which is silenced by Do Not Disturb and low notification volume. The alert fired — your phone just produced no sound. Fix: connect TradingView to TviewAlarm via webhook. TviewAlarm uses alarm-channel audio that bypasses all notification restrictions.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How can I monitor Ethereum while sleeping? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Set ETH price alerts in TradingView for your key levels, then connect them to TviewAlarm via webhook. When ETH hits your level at any time — day or night — your phone rings loudly, waking you up. You only engage when the market reaches your exact conditions. No chart watching required.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Does TviewAlarm work for Ethereum and altcoin alerts? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes. TviewAlarm works with any TradingView alert — ETH, BTC, SOL, any altcoin on TradingView, plus forex, stocks, and indices. One webhook URL handles all of them. You can also set different alarm tones per webhook so you know which asset fired before looking at your phone.</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <h3>Related Fixes</h3>
+    <div class="related-grid">
+      <div class="related-card">
+        <a href="https://tviewalarm.com/pages/tradingview-alerts-not-waking-me-up">Fix tradingview alerts not waking you up — complete guide<span class="arrow">→</span></a>
+      </div>
+      <div class="related-card">
+        <a href="https://tviewalarm.com/pages/loud-crypto-alerts-android">Get loud crypto alerts on Android that bypass silent mode<span class="arrow">→</span></a>
+      </div>
+      <div class="related-card">
+        <a href="https://tviewalarm.com/pages/android-alarm-tradingview-alerts">Android alarm system for TradingView alerts<span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 TviewAlarm · <a href="https://tviewalarm.com">Home</a> · <a href="https://tviewalarm.com/privacy.html">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)});
+function toggleFaq(btn){const a=btn.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');btn.classList.add('open')}}
+</script>
+</body>
+</html>
