@@ -3,30 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About TviewAlarm — TradingView Alarm App for Android</title>
-  <meta name="description" content="TviewAlarm was built by a trader who kept missing alerts while sleeping. It routes TradingView webhook alerts to your Android device as loud alarms that bypass silent mode and Do Not Disturb.">
+  <title>About TviewAlarm — TradingView Webhook Alert App for Android</title>
+  <meta name="description" content="TviewAlarm is an Android app that turns TradingView webhook alerts into loud alarms that bypass silent mode and Do Not Disturb. Built by a trader who kept missing moves. Free 7-day trial on Google Play.">
   <link rel="canonical" href="https://tviewalarm.com/about.html">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tviewalarm.com/about.html">
-  <meta property="og:title" content="About TviewAlarm — TradingView Alarm App for Android">
+  <meta property="og:title" content="About TviewAlarm — TradingView Webhook Alert App for Android">
   <meta property="og:description" content="Built by a trader who kept missing alerts. TviewAlarm routes TradingView webhooks to your Android as loud alarms — bypassing silent mode and Do Not Disturb.">
   <meta property="og:site_name" content="TviewAlarm">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About TviewAlarm",
-    "description": "TviewAlarm is an Android app that delivers TradingView webhook alerts as loud alarms, bypassing silent mode and Do Not Disturb on Android devices.",
-    "url": "https://tviewalarm.com/about.html",
+    "@type": "SoftwareApplication",
+    "name": "TviewAlarm",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Android",
+    "description": "TviewAlarm is an Android app that delivers TradingView webhook alerts as loud alarms on your phone, bypassing silent mode and Do Not Disturb using Android's alarm audio channel.",
+    "url": "https://tviewalarm.com",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.tviewalarm.app",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "7-day free trial, then Pro from $4.99/month or Premium from $9.99/month"
+    },
+    "featureList": [
+      "TradingView webhook alert delivery",
+      "Bypasses Android silent mode",
+      "Bypasses Do Not Disturb",
+      "Alarm-channel audio delivery",
+      "Price alerts for crypto, forex, stocks, indices",
+      "Volatility tracker",
+      "Telegram and email backup alerts",
+      "Do Not Disturb schedule",
+      "Multiple webhook URLs"
+    ],
     "publisher": {
       "@type": "Organization",
       "name": "TviewAlarm",
-      "url": "https://tviewalarm.com",
-      "description": "TviewAlarm builds mobile alert delivery tools for traders using TradingView on Android.",
-      "sameAs": ["https://play.google.com/store/apps/details?id=com.tviewalarm.app"]
+      "url": "https://tviewalarm.com"
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tviewalarm.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://tviewalarm.com/about.html" }
+    ]
   }
   </script>
 
@@ -45,10 +74,34 @@
       },
       {
         "@type": "Question",
+        "name": "How do I set up TviewAlarm with TradingView?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Install TviewAlarm from Google Play, then copy your personal webhook URL from the app's home screen. In TradingView, open any alert, set the notification type to Webhook, and paste your TviewAlarm URL. That's the entire setup — under two minutes, no API keys or coding required. When TradingView fires the alert, TviewAlarm receives the webhook and rings your phone at alarm volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does TviewAlarm work with crypto alerts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. TviewAlarm works with any TradingView webhook alert, including crypto alerts for Bitcoin, Ethereum, and all other assets available on TradingView. It also has a built-in price alert and volatility tracker for over 650 crypto pairs on Binance, so it can alarm you directly when a price level or volatility threshold is hit — without needing TradingView to send a webhook."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why don't TradingView alerts wake me up on Android?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TradingView sends alerts as push notifications, which use Android's notification audio channel. This channel is silenced when your phone is on silent mode or Do Not Disturb is active. TviewAlarm fixes this by routing TradingView alerts through Android's alarm audio channel instead, which is exempt from both silent mode and Do Not Disturb by Android design."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Who built TviewAlarm?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "TviewAlarm was built by an independent developer and trader who repeatedly missed TradingView alerts while sleeping or away from the screen. Standard notifications were too easy to miss — TviewAlarm was created to solve that with alarm-level delivery that forces the phone to ring regardless of sound settings."
+          "text": "TviewAlarm was built by an independent developer and active trader who repeatedly missed TradingView alerts while sleeping or away from the screen. Standard notifications were too easy to miss — TviewAlarm was created to solve that with alarm-level delivery that forces the phone to ring regardless of sound settings."
         }
       },
       {
@@ -143,36 +196,40 @@
 <body>
   <div class="container">
     <a href="/" class="logo">TVIEWALARM</a>
-    <h1>ABOUT</h1>
-    <p class="updated">The alarm for traders who can't afford to miss a move</p>
+    <h1>ABOUT TVIEWALARM</h1>
+    <p class="updated">TradingView webhook alarm app for Android — bypasses silent mode &amp; Do Not Disturb</p>
     <div class="divider"></div>
 
-    <h2>THE PROBLEM</h2>
-    <p>TradingView sends alerts as push notifications. Push notifications are silent when your phone is on silent mode or Do Not Disturb is active. If you're sleeping, in a meeting, or just away from the screen — you miss the alert. You miss the trade.</p>
-    <p>This is a well-known frustration among Android traders. There's no built-in fix in TradingView. The notification channel simply isn't loud enough.</p>
+    <h2>WHY TRADINGVIEW ALERTS FAIL ON ANDROID</h2>
+    <p>TradingView sends alerts as push notifications. Push notifications use Android's notification audio channel — which is silenced whenever your phone is on silent mode or Do Not Disturb is active. If you're sleeping, in a meeting, or just away from the screen, the alert arrives silently. You miss the alert. You miss the trade.</p>
+    <p>This is a structural limitation of how TradingView delivers alerts on Android. There is no setting inside TradingView to fix it. The notification channel simply cannot override your device's sound settings.</p>
 
-    <h2>THE SOLUTION</h2>
-    <p>TviewAlarm bridges TradingView's webhook system with Android's alarm audio channel. Instead of a push notification, your alert rings like an alarm clock — at full volume, through silent mode, through Do Not Disturb, every time.</p>
-    <p>The setup takes under two minutes: install the app, copy your webhook URL, paste it into your TradingView alert. That's it. No API keys, no code, no configuration files.</p>
+    <h2>HOW TVIEWALARM DELIVERS LOUD TRADING ALERTS</h2>
+    <p>TviewAlarm bridges TradingView's webhook system with Android's alarm audio channel — the same channel used by your alarm clock, which Android exempts from silent mode and Do Not Disturb by design.</p>
+    <p>When TradingView fires an alert, it sends a webhook payload to your personal TviewAlarm URL. TviewAlarm receives it and immediately triggers alarm-channel audio on your Android device — at full volume, regardless of your sound settings, every time.</p>
+    <p>Setup takes under two minutes: install the app, copy your webhook URL, paste it into your TradingView alert. No API keys, no code, no configuration files.</p>
 
-    <h2>WHAT IT DOES</h2>
+    <h2>WHAT TVIEWALARM DOES</h2>
     <ul>
-      <li>Receives TradingView webhook alerts and fires alarm-channel audio on your Android device</li>
-      <li>Bypasses silent mode and Do Not Disturb — the same way your alarm clock does</li>
-      <li>Supports multiple webhook URLs for organizing alerts by strategy or instrument</li>
-      <li>Monitors price levels and volatility thresholds across crypto, forex, stocks, and indices — and alarms when they're hit</li>
-      <li>Sends backup alerts via Telegram and email on Premium plans</li>
-      <li>Lets you schedule a Do Not Disturb window so alerts don't wake you during planned downtime</li>
+      <li>Delivers TradingView webhook alerts as loud alarms on Android — bypasses silent mode and Do Not Disturb</li>
+      <li>Supports multiple webhook URLs for organizing alerts by strategy, instrument, or timeframe</li>
+      <li>Built-in price alerts for crypto (650+ Binance pairs), forex, stocks, and indices — no TradingView webhook needed</li>
+      <li>Volatility tracker — alarms when a symbol moves beyond a threshold in a given timeframe</li>
+      <li>Custom alarm sounds per webhook, so you know at a glance which alert fired</li>
+      <li>Backup notifications via Telegram and email (Premium plan) for multi-channel redundancy</li>
+      <li>Do Not Disturb schedule — suppress alerts during specific hours without disabling the app</li>
+      <li>90-day alert history so you can review what fired and when</li>
     </ul>
 
-    <h2>WHO IT'S FOR</h2>
-    <p>TviewAlarm is built for active traders who use TradingView and trade on Android. It's especially useful if you trade crypto (which runs 24/7), swing trade across time zones, or simply need to be reachable when a price level hits — without staring at a screen.</p>
+    <h2>WHO TVIEWALARM IS BUILT FOR</h2>
+    <p>TviewAlarm is built for active traders on Android who use TradingView and can't afford to miss a price alert. It's especially useful for crypto traders (markets run 24/7), swing traders who trade across time zones, and anyone who sets TradingView alerts but sleeps through them because silent mode blocks the sound.</p>
+    <p>If your trading strategy depends on acting when a price level is hit, you need alerts that actually wake you up. That's what TviewAlarm does.</p>
 
-    <h2>INDEPENDENT & UNAFFILIATED</h2>
-    <p>TviewAlarm is an independent product built and maintained by a solo developer. It is not affiliated with, endorsed by, or sponsored by TradingView Inc. It uses TradingView's publicly available webhook alert feature.</p>
+    <h2>INDEPENDENT &amp; UNAFFILIATED WITH TRADINGVIEW</h2>
+    <p>TviewAlarm is an independent product built and maintained by a solo developer. It is not affiliated with, endorsed by, or sponsored by TradingView Inc. It uses TradingView's publicly available webhook alert feature — available to all TradingView users.</p>
 
     <div class="cta-block">
-      <p>Available on Android. 7-day free trial. Cancel anytime.</p>
+      <p>Available on Android. Free 7-day trial — converts to a paid subscription if not cancelled. Cancel anytime.</p>
       <a href="https://play.google.com/store/apps/details?id=com.tviewalarm.app" class="btn">Get TviewAlarm on Google Play</a>
     </div>
 
